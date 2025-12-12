@@ -321,7 +321,7 @@ Step 3. We must set the directory to the folder location in the server to where 
 Step 4. Finally, we can import the data using the `read.csv()` function. The code syntax in the script should read as follows:
 
 ```{r setup, include = FALSE}
-knitr::opts_knit$set(root.dir = "/Users/anwarmusah/Documents/Websites/Content/POLS0008 Data/Week 1/Practical Notes")
+knitr::opts_knit$set(root.dir = "/Users/andreasmvv/Documents/Documentation/UCL Teaching/POLS0008 Data/Week 1")
 knitr::opts_chunk$set(cache = TRUE)
 ```
 ```{r}

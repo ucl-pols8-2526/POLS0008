@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Week 3 Examining data II | POLS0008: Introduction to Quantitative Research Methods 2024/25</title>
   <meta name="description" content="POLS0008: Introduction to Quantitative Methods Handbook" />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Week 3 Examining data II | POLS0008: Introduction to Quantitative Research Methods 2024/25" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="POLS0008: Introduction to Quantitative Methods Handbook" />
-  <meta name="github-repo" content="UCLPG-MSC-SGDS/POLS0008" />
+  <meta name="github-repo" content="ucl-pols8-2526/POLS0008" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Week 3 Examining data II | POLS0008: Introduction to Quantitative Research Methods 2024/25" />
@@ -240,11 +240,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a href="https://www.youtube.com/watch?v=jbkSRLYSojo">[Watch on YouTube]</a></p>
 <p>For this tutorial we start by using the <code>London.Pop</code> object again that we created during <a href="https://uclpg-msc-sgds.github.io/POLS0008/examining-data-i.html">last week’s tutorial</a>. You may still have it loaded into your R workspace if your RStudio Server session is still active.</p>
 <p>At this point, you should be able to set your RStudio Server, upload data to it and set the directory etc., if you struggle with setting up your working directory and you need a reminder, <a href="https://uclpg-msc-sgds.github.io/POLS0008/understanding-data.html#understanding-data"><strong>then have a look at how we set this up in our first week</strong></a>!</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="examining-data-ii.html#cb174-1" tabindex="-1"></a><span class="co"># Load data into RStudio. The spreadsheet is stored in the object called &#39;London.Pop&#39;</span></span>
-<span id="cb174-2"><a href="examining-data-ii.html#cb174-2" tabindex="-1"></a>London.Pop <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;London historical population dataset.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="examining-data-ii.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data into RStudio. The spreadsheet is stored in the object called &#39;London.Pop&#39;</span></span>
+<span id="cb174-2"><a href="examining-data-ii.html#cb174-2" aria-hidden="true" tabindex="-1"></a>London.Pop <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;London historical population dataset.csv&quot;</span>)</span></code></pre></div>
 <p>Now are data loaded again, we can start by recreating a simple <a href="https://en.wikipedia.org/wiki/Scatter_plot">scatter graph</a> in a similar fashion as we did last week using the <code>plot()</code> function.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="examining-data-ii.html#cb175-1" tabindex="-1"></a><span class="co"># make a quick scatter plot of two variables of the London population data set</span></span>
-<span id="cb175-2"><a href="examining-data-ii.html#cb175-2" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>,London.Pop<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="examining-data-ii.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make a quick scatter plot of two variables of the London population data set</span></span>
+<span id="cb175-2"><a href="examining-data-ii.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>,London.Pop<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-quick-scatter-plot-1.png" width="672" /></p>
 </div>
 <div id="ask-yourself-these-questions" class="section level4 unnumbered hasAnchor">
@@ -255,26 +255,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>How can we add a title? How can we change the colour of the points?</li>
 </ol>
 <p>Another common method to visualise your data is by using a <a href="https://en.wikipedia.org/wiki/Line_chart">line chart</a>. Line charts are particularly useful when you want to compare change over time, for example. A line chart can also be relatively easily created in R. Let’s try it by charting the population size over time for one of London’s boroughs: <a href="https://en.wikipedia.org/wiki/London_Borough_of_Hackney">Hackney</a>.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="examining-data-ii.html#cb176-1" tabindex="-1"></a><span class="co"># select the data for the borough of Hackney</span></span>
-<span id="cb176-2"><a href="examining-data-ii.html#cb176-2" tabindex="-1"></a>London.Hackney <span class="ot">&lt;-</span> London.Pop[London.Pop<span class="sc">$</span>Area.Name<span class="sc">==</span><span class="st">&#39;Hackney&#39;</span>,<span class="dv">3</span><span class="sc">:</span><span class="dv">24</span>]</span>
-<span id="cb176-3"><a href="examining-data-ii.html#cb176-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb176-4"><a href="examining-data-ii.html#cb176-4" tabindex="-1"></a>London.Hackney</span></code></pre></div>
-<pre><code>##    Persons.1801 Persons.1811 Persons.1821 Persons.1831 Persons.1841
-## 12        50000        64000        80000       105000       128000
-##    Persons.1851 Persons.1861 Persons.1871 Persons.1881 Persons.1891
-## 12       170000       218000       261000       329000       372000
-##    Persons.1901 Persons.1911 Persons.1921 Persons.1931 Persons.1939
-## 12       389000       385000       379000       364000       332000
-##    Persons.1951 Persons.1961 Persons.1971 Persons.1981 Persons.1991
-## 12       265000       257522       220000       180434       162772
-##    Persons.2001 Persons.2011
-## 12       202825       246270</code></pre>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="examining-data-ii.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select the data for the borough of Hackney</span></span>
+<span id="cb176-2"><a href="examining-data-ii.html#cb176-2" aria-hidden="true" tabindex="-1"></a>London.Hackney <span class="ot">&lt;-</span> London.Pop[London.Pop<span class="sc">$</span>Area.Name<span class="sc">==</span><span class="st">&#39;Hackney&#39;</span>,<span class="dv">3</span><span class="sc">:</span><span class="dv">24</span>]</span>
+<span id="cb176-3"><a href="examining-data-ii.html#cb176-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb176-4"><a href="examining-data-ii.html#cb176-4" aria-hidden="true" tabindex="-1"></a>London.Hackney</span></code></pre></div>
+<pre><code>##    Persons.1801 Persons.1811 Persons.1821 Persons.1831 Persons.1841 Persons.1851 Persons.1861 Persons.1871 Persons.1881 Persons.1891 Persons.1901
+## 12        50000        64000        80000       105000       128000       170000       218000       261000       329000       372000       389000
+##    Persons.1911 Persons.1921 Persons.1931 Persons.1939 Persons.1951 Persons.1961 Persons.1971 Persons.1981 Persons.1991 Persons.2001 Persons.2011
+## 12       385000       379000       364000       332000       265000       257522       220000       180434       162772       202825       246270</code></pre>
 <p>The crucial part of the code snippet above is what’s included in the square brackets <code>[ ]</code>. We are subsetting the <code>London.Pop</code> object, but instead of telling R what column names or numbers we require, we are requesting all rows in the <strong>Area.Name</strong> column that contain Hackney. Hackney is a text string so it needs to go in speech marks <code>''</code> (or <code>""</code>) and we need to use two equals signs <code>==</code> in R to mean “identical to”. A single equals sign <code>=</code> is another way of assigning objects or saying “equal to”. Although <code>=</code> works the same way as <code>&lt;-</code>, it is much less widely used for this purpose because it is also used when parameterising functions.</p>
 <p>We should now be left with a dataframe that only contains one row of data: the data for the borough of Hackney. This does raise a question: how do we include all the variables into our plot as all our data are spread out over different columns (i.e. <em>Persons1801</em>, <em>Persons1811</em>, etc.)? Ideally we would <strong>flip</strong> the data set around so that all the data (i.e. <em>Persons1801</em>, <em>Persons1811</em>, etc.) would be in one column. Well, luckily we can actually do that by <a href="https://en.wikipedia.org/wiki/Transpose">transposing</a> our data set. Transposing is a mathematical operation to flip a matrix over its diagonal. Effectively, it turns rows into columns and columns into rows. In R we can do this using the <code>t()</code> function.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="examining-data-ii.html#cb178-1" tabindex="-1"></a><span class="co"># flip the rows and columns of our data set</span></span>
-<span id="cb178-2"><a href="examining-data-ii.html#cb178-2" tabindex="-1"></a>London.Hackney.t <span class="ot">&lt;-</span> <span class="fu">t</span>(London.Hackney)</span>
-<span id="cb178-3"><a href="examining-data-ii.html#cb178-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb178-4"><a href="examining-data-ii.html#cb178-4" tabindex="-1"></a>London.Hackney.t</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="examining-data-ii.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="co"># flip the rows and columns of our data set</span></span>
+<span id="cb178-2"><a href="examining-data-ii.html#cb178-2" aria-hidden="true" tabindex="-1"></a>London.Hackney.t <span class="ot">&lt;-</span> <span class="fu">t</span>(London.Hackney)</span>
+<span id="cb178-3"><a href="examining-data-ii.html#cb178-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb178-4"><a href="examining-data-ii.html#cb178-4" aria-hidden="true" tabindex="-1"></a>London.Hackney.t</span></code></pre></div>
 <pre><code>##                  12
 ## Persons.1801  50000
 ## Persons.1811  64000
@@ -298,8 +292,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Persons.1991 162772
 ## Persons.2001 202825
 ## Persons.2011 246270</code></pre>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="examining-data-ii.html#cb180-1" tabindex="-1"></a><span class="co"># plot the size of the population in the London borough of Hackney over time</span></span>
-<span id="cb180-2"><a href="examining-data-ii.html#cb180-2" tabindex="-1"></a><span class="fu">plot</span>(London.Hackney.t, <span class="at">type=</span><span class="st">&#39;b&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="examining-data-ii.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the size of the population in the London borough of Hackney over time</span></span>
+<span id="cb180-2"><a href="examining-data-ii.html#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(London.Hackney.t, <span class="at">type=</span><span class="st">&#39;b&#39;</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-transpose-data-1.png" width="672" /></p>
 </div>
 <div id="ask-yourself-these-questions-1" class="section level4 unnumbered hasAnchor">
@@ -313,16 +307,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 You may be wondering why the first column of the transposed dataframe does not have a column name and why the column with the data of the transposed dataframe is called <em>12</em>. The reason for this is that the <code>t()</code> function flips the row and column indices around. The column indices (i.e. in this case the column names) now become row names and the row indices (i.e. in this case row numbers) now become column names (the data for Hackney can be found on row number 12 in the original data set). However, do not worry about this too much for now.</p>
 </div>
 <p>Last week you also got introduced to the box and whisker plot. A box and whisker plot is a method for visualising your data by their quartiles with the whiskers (the lines extending from the box) incidating the variability of the values outside the lower and upper quartile. Typically outliers are plotted as individual points. Let’s go back to our full data set and make a boxplot for one of the population variables in the London population data set.</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="examining-data-ii.html#cb181-1" tabindex="-1"></a><span class="co"># make a boxplot of one of the variables in the London population data set</span></span>
-<span id="cb181-2"><a href="examining-data-ii.html#cb181-2" tabindex="-1"></a><span class="fu">boxplot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>,<span class="at">horizontal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="examining-data-ii.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make a boxplot of one of the variables in the London population data set</span></span>
+<span id="cb181-2"><a href="examining-data-ii.html#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>,<span class="at">horizontal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-quick-boxplot-1.png" width="672" /></p>
 <p>The standard <code>plot()</code> and <code>boxplot</code> functions offer a huge number of options for customisation. A useful option is to combine multiple graphs into one figure to allow for easy comparison. We can do this by setting some of the graphical parameters and requesting that our graphs are plotted together.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="examining-data-ii.html#cb182-1" tabindex="-1"></a><span class="co"># specify that we want an output consisting of two rows</span></span>
-<span id="cb182-2"><a href="examining-data-ii.html#cb182-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</span>
-<span id="cb182-3"><a href="examining-data-ii.html#cb182-3" tabindex="-1"></a><span class="co"># make a boxpot of one of the variables in the London population data set</span></span>
-<span id="cb182-4"><a href="examining-data-ii.html#cb182-4" tabindex="-1"></a><span class="fu">boxplot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>,<span class="at">horizontal=</span><span class="cn">TRUE</span>)</span>
-<span id="cb182-5"><a href="examining-data-ii.html#cb182-5" tabindex="-1"></a><span class="co"># make a boxplot of another variable in the London population data set</span></span>
-<span id="cb182-6"><a href="examining-data-ii.html#cb182-6" tabindex="-1"></a><span class="fu">boxplot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2011</span>,<span class="at">horizontal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="examining-data-ii.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="co"># specify that we want an output consisting of two rows</span></span>
+<span id="cb182-2"><a href="examining-data-ii.html#cb182-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</span>
+<span id="cb182-3"><a href="examining-data-ii.html#cb182-3" aria-hidden="true" tabindex="-1"></a><span class="co"># make a boxpot of one of the variables in the London population data set</span></span>
+<span id="cb182-4"><a href="examining-data-ii.html#cb182-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>,<span class="at">horizontal=</span><span class="cn">TRUE</span>)</span>
+<span id="cb182-5"><a href="examining-data-ii.html#cb182-5" aria-hidden="true" tabindex="-1"></a><span class="co"># make a boxplot of another variable in the London population data set</span></span>
+<span id="cb182-6"><a href="examining-data-ii.html#cb182-6" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2011</span>,<span class="at">horizontal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-plot-with-parameters-1.png" width="672" /></p>
 <div class="note">
 <p><strong>Note</strong><br/>
@@ -337,14 +331,14 @@ The specification given to the <code>par()</code> function only works once: it i
 <li>What happens if we update our parameters to <code>par(mfrow=c(1,2))</code>?</li>
 </ol>
 <p>The last type of plot we will introduce to you today is called a <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a>. As explained in the lecture video, a histogram is a graphical display of data using bars of different heights. It is therefore quite similar to a bar chart, however, with a histogram we <strong>group</strong> our values into bins. We can create in histogram in R using the <code>hist()</code> function.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="examining-data-ii.html#cb183-1" tabindex="-1"></a><span class="co"># make a histogram of one of the variables in the London population data set</span></span>
-<span id="cb183-2"><a href="examining-data-ii.html#cb183-2" tabindex="-1"></a><span class="fu">hist</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="examining-data-ii.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make a histogram of one of the variables in the London population data set</span></span>
+<span id="cb183-2"><a href="examining-data-ii.html#cb183-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-create-a-histogram-1.png" width="672" /></p>
 <p>Currently R automatically picks the width of the bins in which the data are grouped. To change the width of these bins, we can specify the <code>breaks</code> parameter:</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="examining-data-ii.html#cb184-1" tabindex="-1"></a><span class="co"># create a vector with break values</span></span>
-<span id="cb184-2"><a href="examining-data-ii.html#cb184-2" tabindex="-1"></a>bindwidth <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100000</span>,<span class="dv">200000</span>,<span class="dv">300000</span>,<span class="dv">400000</span>)</span>
-<span id="cb184-3"><a href="examining-data-ii.html#cb184-3" tabindex="-1"></a><span class="co"># make a histogram of one of the variables in the London population data set</span></span>
-<span id="cb184-4"><a href="examining-data-ii.html#cb184-4" tabindex="-1"></a><span class="fu">hist</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>,<span class="at">breaks=</span>bindwidth)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="examining-data-ii.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a vector with break values</span></span>
+<span id="cb184-2"><a href="examining-data-ii.html#cb184-2" aria-hidden="true" tabindex="-1"></a>bindwidth <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100000</span>,<span class="dv">200000</span>,<span class="dv">300000</span>,<span class="dv">400000</span>)</span>
+<span id="cb184-3"><a href="examining-data-ii.html#cb184-3" aria-hidden="true" tabindex="-1"></a><span class="co"># make a histogram of one of the variables in the London population data set</span></span>
+<span id="cb184-4"><a href="examining-data-ii.html#cb184-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.2001</span>,<span class="at">breaks=</span>bindwidth)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-bin-width-1.png" width="672" /></p>
 </div>
 <div id="recap-2" class="section level4 unnumbered hasAnchor">
@@ -361,27 +355,27 @@ The specification given to the <code>par()</code> function only works once: it i
 <h2><span class="header-section-number">3.3</span> ggplot2<a href="examining-data-ii.html#ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The graphs and figures we have made so far are not really pretty. Although possible with the basic R installation, there are easier and better ways to make nice visualisations. For this we can turn to other R packages that have been developed. In fact, there are many hundreds of packages in R each designed for a specific purpose, some of which you can use to create plots in R. One of those packages is called <code>ggplot2</code>. The <code>ggplot2</code> package is an implementation of the Grammar of Graphics (<a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson 2005</a>) - a general scheme for data visualisation that breaks up graphs into semantic components such as scales and layers. <code>ggplot2</code> can serve as a replacement for the base graphics in R and contains a number of default options that match good visualisation practice. You provide the data, tell <code>ggplot2</code> how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.</p>
 <p>As there are many hundreds of R packages, these are not installed automatically. This means that every additional package we want to use needs to be downloaded and then we need to load it into R in order to use it. To download and install the <code>ggplot2</code> package type the following:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="examining-data-ii.html#cb185-1" tabindex="-1"></a><span class="co"># install package</span></span>
-<span id="cb185-2"><a href="examining-data-ii.html#cb185-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="examining-data-ii.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install package</span></span>
+<span id="cb185-2"><a href="examining-data-ii.html#cb185-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
 <div class="note">
 <p><strong>Note</strong><br/>
 If you are running RStudio on your own computer: when you hit ‘enter’ you <em>could</em> be asked to select a <a href="https://en.wikipedia.org/wiki/Mirror_site">mirror</a> to download the package contents from. It does not really matter which one you choose, but we would suggest you pick the mirror that is geographically closest to you.</p>
 </div>
 <p>The <code>install.packages()</code> step only needs to be performed once. You do not need to install a the package every time you want to use it. However, each time you open R, or start a <strong>new</strong> R session in RStudio Server, and wish to use a package you need to use the <code>library()</code> command to tell R that it will be required.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="examining-data-ii.html#cb186-1" tabindex="-1"></a><span class="co"># load ggplot2 package without quotes</span></span>
-<span id="cb186-2"><a href="examining-data-ii.html#cb186-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="examining-data-ii.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load ggplot2 package without quotes</span></span>
+<span id="cb186-2"><a href="examining-data-ii.html#cb186-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p>Now we installed <code>ggplot2</code> and loaded it into our R session, we can start by trying to make a basic plot using the <code>ggplot2</code> package ourselves. Let’s continue for a little while longer with our <code>London.Pop</code> object.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="examining-data-ii.html#cb187-1" tabindex="-1"></a><span class="co"># create a ggplot2 object named &#39;p&#39;</span></span>
-<span id="cb187-2"><a href="examining-data-ii.html#cb187-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>London.Pop, <span class="fu">aes</span>(Persons<span class="fl">.1811</span>, Persons<span class="fl">.1911</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="examining-data-ii.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a ggplot2 object named &#39;p&#39;</span></span>
+<span id="cb187-2"><a href="examining-data-ii.html#cb187-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>London.Pop, <span class="fu">aes</span>(Persons<span class="fl">.1811</span>, Persons<span class="fl">.1911</span>))</span></code></pre></div>
 <p>What you have just done is set up a <code>ggplot</code> object where you tell where you want the input data to come from – in this case it is our <code>London.Pop</code> object. The column headings within the <code>aes()</code> brackets refer to the parts of that data frame you wish to use (the variables <em>Persons.1811</em> and <em>Persons.1911</em>). aes is short for <strong>aesthetics that vary</strong> – this is a complicated way of saying the data variables used in the plot. Let’s have a look at this object.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="examining-data-ii.html#cb188-1" tabindex="-1"></a><span class="co"># plot</span></span>
-<span id="cb188-2"><a href="examining-data-ii.html#cb188-2" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="examining-data-ii.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
+<span id="cb188-2"><a href="examining-data-ii.html#cb188-2" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-plot-that-empty-ggplot2-object-1.png" width="672" /></p>
 <p>As you can see, if you inspect the object <code>p</code> that we just created you will get an empty canvas. The reason for this is that you have not told <code>ggplot</code> what you want to do with the data. We do this by adding so-called <strong>geoms</strong>, geometries. Let’s try to create a scatter plot. We can do this by using the geom <code>geom_point()</code>:</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="examining-data-ii.html#cb189-1" tabindex="-1"></a><span class="co"># add our geom to our &#39;p&#39; object</span></span>
-<span id="cb189-2"><a href="examining-data-ii.html#cb189-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb189-3"><a href="examining-data-ii.html#cb189-3" tabindex="-1"></a><span class="co"># plot</span></span>
-<span id="cb189-4"><a href="examining-data-ii.html#cb189-4" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="examining-data-ii.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add our geom to our &#39;p&#39; object</span></span>
+<span id="cb189-2"><a href="examining-data-ii.html#cb189-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb189-3"><a href="examining-data-ii.html#cb189-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
+<span id="cb189-4"><a href="examining-data-ii.html#cb189-4" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-add-a-geom-object-1.png" width="672" /></p>
 <p>You can already see that this plot is looking a bit nicer than the scatterplot we created with the base <code>plot()</code> function used above. Within the <code>geom_point()</code> brackets you can alter the appearance of the points in the plot.</p>
 <div id="questions-6" class="section level4 unnumbered hasAnchor">
@@ -395,25 +389,25 @@ If you are running RStudio on your own computer: when you hit ‘enter’ you <e
 Whilst these instructions are step by step, you are strongly encouraged to deviate from them, for instance, by trying different colours, to get a better understanding of what we are doing. For further help, <code>ggplot2</code> is one of the best documented packages in R and <a href="https://ggplot2.tidyverse.org/">large volumes of documentation</a> are available. If you want to explore <code>ggplot2</code> further, we would also recommend taking a look at the <a href="https://cedricscherer.netlify.app/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/">ggplot2 tutorial for beautiful plotting in R</a> by by Cédric Scherer.</p>
 </div>
 <p>Rather than colouring your points by one colour, you can also colour the points according to another variable. You can do this by adding the desired variable into the <code>aes()</code> section after <code>geom_point()</code>. Here we will do this to indicate the size of the population in 2011 as well as the relationship between the size of the population in 1811 and 1911.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="examining-data-ii.html#cb190-1" tabindex="-1"></a><span class="co"># add some more aesthetics that vary</span></span>
-<span id="cb190-2"><a href="examining-data-ii.html#cb190-2" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> Persons<span class="fl">.2011</span>), <span class="at">size =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="examining-data-ii.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add some more aesthetics that vary</span></span>
+<span id="cb190-2"><a href="examining-data-ii.html#cb190-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> Persons<span class="fl">.2011</span>), <span class="at">size =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-add-a-geom-object-with-some-more-aes-1.png" width="672" /></p>
 <p>You will notice that <code>ggplot</code> has also created a key that shows the values associated with each colour. In this slightly contrived example it is also possible to resize each of the points according to the <code>Persons.2011</code> variable.</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="examining-data-ii.html#cb191-1" tabindex="-1"></a><span class="co"># add some more aesthetics that vary</span></span>
-<span id="cb191-2"><a href="examining-data-ii.html#cb191-2" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> Persons<span class="fl">.2011</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="examining-data-ii.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add some more aesthetics that vary</span></span>
+<span id="cb191-2"><a href="examining-data-ii.html#cb191-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> Persons<span class="fl">.2011</span>))</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-add-a-geom-object-with-some-other-aes-1.png" width="672" /></p>
 <p>The real power of <code>ggplot2</code> lies in its ability to build a plot up as a series of layers. This is done by stringing plot functions (geoms) together with the <code>+</code> sign. For instance, we can add a text layer to the plot using <code>geom_text()</code>.</p>
 <div class="note">
 <p><strong>Note</strong><br/>
 This idea of layers (or geoms) is quite different from the standard plot functions in R, but you will find that each of the functions does a lot of clever stuff to make plotting much easier (see the <code>ggplot2</code> documentation for a full list).</p>
 </div>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="examining-data-ii.html#cb192-1" tabindex="-1"></a><span class="co"># add a geom_text to the plot</span></span>
-<span id="cb192-2"><a href="examining-data-ii.html#cb192-2" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> Persons<span class="fl">.2011</span>)) <span class="sc">+</span></span>
-<span id="cb192-3"><a href="examining-data-ii.html#cb192-3" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour=</span><span class="st">&#39;red&#39;</span>, <span class="fu">aes</span>(<span class="at">label =</span> Area.Name))</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="examining-data-ii.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a geom_text to the plot</span></span>
+<span id="cb192-2"><a href="examining-data-ii.html#cb192-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> Persons<span class="fl">.2011</span>)) <span class="sc">+</span></span>
+<span id="cb192-3"><a href="examining-data-ii.html#cb192-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour=</span><span class="st">&#39;red&#39;</span>, <span class="fu">aes</span>(<span class="at">label =</span> Area.Name))</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-full-ggplot-1.png" width="672" /></p>
 <p>The above code adds London Borough labels to the plot over the points they correspond to. This is not perfect since many of the labels overlap but they serve as a useful illustration of the layers. To make things a little easier the plot can be saved as a <code>pdf</code> using the <code>ggsave()</code> command. When saving the plot can be enlarged using the <code>scale</code> parameter to help make the labels more legible.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="examining-data-ii.html#cb193-1" tabindex="-1"></a><span class="co"># save the plot</span></span>
-<span id="cb193-2"><a href="examining-data-ii.html#cb193-2" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;first_ggplot.pdf&#39;</span>, <span class="at">scale=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="examining-data-ii.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="co"># save the plot</span></span>
+<span id="cb193-2"><a href="examining-data-ii.html#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;first_ggplot.pdf&#39;</span>, <span class="at">scale=</span><span class="dv">2</span>)</span></code></pre></div>
 </div>
 <div id="ask-yourself-this-question" class="section level4 unnumbered hasAnchor">
 <h4>Ask yourself this question<a href="examining-data-ii.html#ask-yourself-this-question" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -422,49 +416,42 @@ This idea of layers (or geoms) is quite different from the standard plot functio
 </ol>
 <p>Please note that <code>ggsave()</code> only works with plots that were created with <code>ggplot</code>. Within the brackets you specify the file name for the plot, but as you can see in the example you also include the file format: in this case <code>.pdf</code>, but you could also save the plot as a <code>.jpg</code> file. The scale controls how many times bigger you want the exported plot to be than it currently is in the plot window.</p>
 <p><code>ggplot2</code> is not limited to scatterplots and we can also create more advanced plots such as histograms and box and whisker plots. Let’s first switch our data set to the one containing the number of assault incidents that ambulances have been called to in London between 2009 and 2011. As you will already have uploaded this <code>Ambulance and Assault Incidents data.csv</code> file to your working directory <a href="https://uclpg-msc-sgds.github.io/POLS0008/examining-data-i.html">last week</a>, we can simply reload the file if it is not still loaded into your R workspace.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="examining-data-ii.html#cb194-1" tabindex="-1"></a><span class="co"># Load data into RStudio. The spreadsheet is stored in the object called &#39;London.Ambulance&#39;</span></span>
-<span id="cb194-2"><a href="examining-data-ii.html#cb194-2" tabindex="-1"></a>London.Ambulance <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;Ambulance and Assault Incidents data.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="examining-data-ii.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data into RStudio. The spreadsheet is stored in the object called &#39;London.Ambulance&#39;</span></span>
+<span id="cb194-2"><a href="examining-data-ii.html#cb194-2" aria-hidden="true" tabindex="-1"></a>London.Ambulance <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;Ambulance and Assault Incidents data.csv&#39;</span>)</span></code></pre></div>
 <p>Histograms provide a nice way of graphically summarising a dataset, so let’s start by making a <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a> for our assault incident variable.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="examining-data-ii.html#cb195-1" tabindex="-1"></a><span class="co"># create a ggplot2 object named &#39;p&#39;</span></span>
-<span id="cb195-2"><a href="examining-data-ii.html#cb195-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(London.Ambulance, <span class="fu">aes</span>(<span class="at">x=</span>Assault_09_11))</span>
-<span id="cb195-3"><a href="examining-data-ii.html#cb195-3" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb195-4"><a href="examining-data-ii.html#cb195-4" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="examining-data-ii.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a ggplot2 object named &#39;p&#39;</span></span>
+<span id="cb195-2"><a href="examining-data-ii.html#cb195-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(London.Ambulance, <span class="fu">aes</span>(<span class="at">x=</span>Assault_09_11))</span>
+<span id="cb195-3"><a href="examining-data-ii.html#cb195-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb195-4"><a href="examining-data-ii.html#cb195-4" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-quick-plot-1.png" width="672" /></p>
 <p>The <code>ggplot(London.Ambulance, aes(x=Assault_09_11))</code> section means “create a generic plot object (called <code>p</code>) from the input object using the <em>Assault_09_11</em> column as the data for the x axis”. Remember the data variables are required as aesthetics parameters so the <em>Assault_09_11</em> appears in the <code>aes()</code> brackets. To create the histogram you need to add the relevant <code>ggplot2</code> command (geom).</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="examining-data-ii.html#cb196-1" tabindex="-1"></a><span class="co"># add geom to our &#39;p&#39; object</span></span>
-<span id="cb196-2"><a href="examining-data-ii.html#cb196-2" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="examining-data-ii.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add geom to our &#39;p&#39; object</span></span>
+<span id="cb196-2"><a href="examining-data-ii.html#cb196-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="POLS0008_files/figure-html/03-quick-histogram-1.png" width="672" /></p>
 <p>The height of each bar (the x-axis) shows the count of the datapoints and the width of each bar is the value range of datapoints included. If you want the bars to be thinner (to represent a narrower range of values and capture some more of the variation in the distribution) you can adjust the bin width. Bin width controls the size of ‘bins’ that the data are split up into. Try:</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="examining-data-ii.html#cb198-1" tabindex="-1"></a><span class="co"># add geom to our &#39;p&#39; object, adjust the bin width settings</span></span>
-<span id="cb198-2"><a href="examining-data-ii.html#cb198-2" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="examining-data-ii.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add geom to our &#39;p&#39; object, adjust the bin width settings</span></span>
+<span id="cb198-2"><a href="examining-data-ii.html#cb198-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth=</span><span class="dv">10</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-adjusted-histogram-1.png" width="672" /></p>
 <p>This plot has provided a good impression of the overall distribution, but it would be interesting to see characteristics of the data within each of the Boroughs. We can do this since each Borough in the <code>London.Ambulance</code> object is made up of multiple wards. To see what we mean, we can select all the wards that fall within the Borough of Camden, which has the code <code>00AG</code> (if you want to see what each Borough the code corresponds to, and learn a little more about the statistical geography of England and Wales, then <a href="http://en.wikipedia.org/wiki/ONS_coding_system">do have a look here</a>.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="examining-data-ii.html#cb199-1" tabindex="-1"></a><span class="co"># filter the data set</span></span>
-<span id="cb199-2"><a href="examining-data-ii.html#cb199-2" tabindex="-1"></a>camden <span class="ot">&lt;-</span> London.Ambulance[London.Ambulance<span class="sc">$</span>BorCode<span class="sc">==</span><span class="st">&#39;00AG&#39;</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="examining-data-ii.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter the data set</span></span>
+<span id="cb199-2"><a href="examining-data-ii.html#cb199-2" aria-hidden="true" tabindex="-1"></a>camden <span class="ot">&lt;-</span> London.Ambulance[London.Ambulance<span class="sc">$</span>BorCode<span class="sc">==</span><span class="st">&#39;00AG&#39;</span>,]</span></code></pre></div>
 <p>Just like before, the crucial part of the code snippet above is what’s included in the square brackets. Again we are subsetting the <code>London.Ambulance</code> object, but instead of telling R what column names or numbers we require, we are requesting all rows in the <em>BorCode</em> column that contain <code>00AG</code>. Let’s quickly compare our original <code>London.Pop</code> object with our newly created <code>camden</code> object:</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="examining-data-ii.html#cb200-1" tabindex="-1"></a><span class="co"># inspect the ambulance assault incident data set</span></span>
-<span id="cb200-2"><a href="examining-data-ii.html#cb200-2" tabindex="-1"></a><span class="fu">nrow</span>(London.Pop)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="examining-data-ii.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the ambulance assault incident data set</span></span>
+<span id="cb200-2"><a href="examining-data-ii.html#cb200-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(London.Pop)</span></code></pre></div>
 <pre><code>## [1] 33</code></pre>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="examining-data-ii.html#cb202-1" tabindex="-1"></a><span class="co"># inspect the ambulance assault incident data set for Camden</span></span>
-<span id="cb202-2"><a href="examining-data-ii.html#cb202-2" tabindex="-1"></a><span class="fu">nrow</span>(camden)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="examining-data-ii.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the ambulance assault incident data set for Camden</span></span>
+<span id="cb202-2"><a href="examining-data-ii.html#cb202-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(camden)</span></code></pre></div>
 <pre><code>## [1] 18</code></pre>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="examining-data-ii.html#cb204-1" tabindex="-1"></a><span class="co"># inspect the ambulance assault incident data set for Camden</span></span>
-<span id="cb204-2"><a href="examining-data-ii.html#cb204-2" tabindex="-1"></a><span class="fu">head</span>(camden)</span></code></pre></div>
-<pre><code>##     BorCode                       WardName WardCode                   WardType
-## 128    00AG                        Belsize   00AGGD    Prospering Metropolitan
-## 129    00AG                     Bloomsbury   00AGGE    Prospering Metropolitan
-## 130    00AG Camden Town with Primrose Hill   00AGGF    Prospering Metropolitan
-## 131    00AG                     Cantelowes   00AGGG Multicultural Metropolitan
-## 132    00AG                  Fortune Green   00AGGH    Prospering Metropolitan
-## 133    00AG          Frognal and Fitzjohns   00AGGJ    Prospering Metropolitan
-##     Assault_09_11
-## 128            91
-## 129           315
-## 130           535
-## 131           238
-## 132           106
-## 133            77</code></pre>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="examining-data-ii.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the ambulance assault incident data set for Camden</span></span>
+<span id="cb204-2"><a href="examining-data-ii.html#cb204-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(camden)</span></code></pre></div>
+<pre><code>##     BorCode                       WardName WardCode                   WardType Assault_09_11
+## 128    00AG                        Belsize   00AGGD    Prospering Metropolitan            91
+## 129    00AG                     Bloomsbury   00AGGE    Prospering Metropolitan           315
+## 130    00AG Camden Town with Primrose Hill   00AGGF    Prospering Metropolitan           535
+## 131    00AG                     Cantelowes   00AGGG Multicultural Metropolitan           238
+## 132    00AG                  Fortune Green   00AGGH    Prospering Metropolitan           106
+## 133    00AG          Frognal and Fitzjohns   00AGGJ    Prospering Metropolitan            77</code></pre>
 </div>
 <div id="questions-7" class="section level4 unnumbered hasAnchor">
 <h4>Questions<a href="examining-data-ii.html#questions-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -472,15 +459,15 @@ This idea of layers (or geoms) is quite different from the standard plot functio
 <li>Why do we have to use double quotes (<code>''</code>) to subset out dataframe to get all rows that contain <code>00AG</code>?</li>
 </ol>
 <p>So to produce a histogram for Camden, the code above needs to be replicated using the <code>camden</code> object in the place of <code>London.Pop</code>:</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="examining-data-ii.html#cb206-1" tabindex="-1"></a><span class="co"># create a ggplot2 object named &#39;p.camden&#39;</span></span>
-<span id="cb206-2"><a href="examining-data-ii.html#cb206-2" tabindex="-1"></a>p.camden <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(camden, <span class="fu">aes</span>(<span class="at">x=</span>Assault_09_11))</span>
-<span id="cb206-3"><a href="examining-data-ii.html#cb206-3" tabindex="-1"></a><span class="co"># add geom to our &#39;p.camden&#39; object</span></span>
-<span id="cb206-4"><a href="examining-data-ii.html#cb206-4" tabindex="-1"></a>p.camden <span class="sc">+</span> <span class="fu">geom_histogram</span>()  </span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="examining-data-ii.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a ggplot2 object named &#39;p.camden&#39;</span></span>
+<span id="cb206-2"><a href="examining-data-ii.html#cb206-2" aria-hidden="true" tabindex="-1"></a>p.camden <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(camden, <span class="fu">aes</span>(<span class="at">x=</span>Assault_09_11))</span>
+<span id="cb206-3"><a href="examining-data-ii.html#cb206-3" aria-hidden="true" tabindex="-1"></a><span class="co"># add geom to our &#39;p.camden&#39; object</span></span>
+<span id="cb206-4"><a href="examining-data-ii.html#cb206-4" aria-hidden="true" tabindex="-1"></a>p.camden <span class="sc">+</span> <span class="fu">geom_histogram</span>()  </span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="POLS0008_files/figure-html/03-histogram-camden-1.png" width="672" /></p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="examining-data-ii.html#cb208-1" tabindex="-1"></a><span class="co"># plot pretty(ish) </span></span>
-<span id="cb208-2"><a href="examining-data-ii.html#cb208-2" tabindex="-1"></a>p.camden <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb208-3"><a href="examining-data-ii.html#cb208-3" tabindex="-1"></a>           <span class="fu">ggtitle</span>(<span class="st">&#39;Assault incidents in Camden&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="examining-data-ii.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pretty(ish) </span></span>
+<span id="cb208-2"><a href="examining-data-ii.html#cb208-2" aria-hidden="true" tabindex="-1"></a>p.camden <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb208-3"><a href="examining-data-ii.html#cb208-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggtitle</span>(<span class="st">&#39;Assault incidents in Camden&#39;</span>)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="POLS0008_files/figure-html/03-histogram-camden-2.png" width="672" /></p>
 </div>
@@ -491,17 +478,17 @@ This idea of layers (or geoms) is quite different from the standard plot functio
 <li>What do the values on the y-axis of our histogram mean?</li>
 </ol>
 <p>As you can see this histogram looks a little different than the histogram for the entire data set did. This is largely because we have relatively few rows of data in the <code>camden</code> object (as we saw when using <code>nrow(camden)</code>). Nevertheless it would be interesting to see the data distributions for each of the London Boroughs. It is a chance to use the <code>facet_wrap()</code> function in R. This brilliant function lets you create a whole load of graphs at once!</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="examining-data-ii.html#cb210-1" tabindex="-1"></a><span class="co"># note that we are back to using the `p` object since we need all our data for this</span></span>
-<span id="cb210-2"><a href="examining-data-ii.html#cb210-2" tabindex="-1"></a><span class="co"># this code may generate a large number of warning messages relating to the plot bin width, don&#39;t worry about them</span></span>
-<span id="cb210-3"><a href="examining-data-ii.html#cb210-3" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb210-4"><a href="examining-data-ii.html#cb210-4" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>BorCode)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="examining-data-ii.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="co"># note that we are back to using the `p` object since we need all our data for this</span></span>
+<span id="cb210-2"><a href="examining-data-ii.html#cb210-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this code may generate a large number of warning messages relating to the plot bin width, don&#39;t worry about them</span></span>
+<span id="cb210-3"><a href="examining-data-ii.html#cb210-3" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb210-4"><a href="examining-data-ii.html#cb210-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>BorCode)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="POLS0008_files/figure-html/03-wrap-wrap-wrap-1.png" width="672" /></p>
 <p>Yes. It is that easy. Let’s try using <code>facet_wrap()</code> to plot according to Ward type:</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="examining-data-ii.html#cb212-1" tabindex="-1"></a><span class="co"># note that we are back to using the `p` object since we need all our data for this</span></span>
-<span id="cb212-2"><a href="examining-data-ii.html#cb212-2" tabindex="-1"></a><span class="co"># this code may generate a large number of warning messages relating to the plot bin width, don&#39;t worry about them</span></span>
-<span id="cb212-3"><a href="examining-data-ii.html#cb212-3" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb212-4"><a href="examining-data-ii.html#cb212-4" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>WardType)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="examining-data-ii.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="co"># note that we are back to using the `p` object since we need all our data for this</span></span>
+<span id="cb212-2"><a href="examining-data-ii.html#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this code may generate a large number of warning messages relating to the plot bin width, don&#39;t worry about them</span></span>
+<span id="cb212-3"><a href="examining-data-ii.html#cb212-3" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb212-4"><a href="examining-data-ii.html#cb212-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>WardType)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="POLS0008_files/figure-html/03-wrap-wrap-wrap-ward-1.png" width="672" /></p>
 <p>The <code>facet_wrap()</code> part of the code simply needs the name of the column you would like to use to subset the data into individual plots. Before the column name a tilde <code>~</code> is used as shorthand for “by” - so using the function we are asking R to facet the input object into lots of smaller plots based on the <em>BorCode</em> column in the first example and <em>WardType</em> in the second.</p>
@@ -512,30 +499,30 @@ This idea of layers (or geoms) is quite different from the standard plot functio
 <li>Use the <code>facet_wrap()</code> help file to learn how to create the same plot but with the graphs arranged into 4 columns. Which parameters need to be specified?</li>
 </ol>
 <p>In addition to histograms, another type of plot that, as we know, shows the core characteristics of the distribution of values within a data set is a box and whisker plot. These too can be easily produced using the <code>ggplot2</code> package:</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="examining-data-ii.html#cb214-1" tabindex="-1"></a><span class="co"># note that the `Assault_09_11` column is now y and not x</span></span>
-<span id="cb214-2"><a href="examining-data-ii.html#cb214-2" tabindex="-1"></a><span class="co"># we specify x = &#39;London&#39; to add a meaningfull label to the x-axis</span></span>
-<span id="cb214-3"><a href="examining-data-ii.html#cb214-3" tabindex="-1"></a>p.boxplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(London.Ambulance, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&#39;London&#39;</span>, <span class="at">y=</span>Assault_09_11))</span>
-<span id="cb214-4"><a href="examining-data-ii.html#cb214-4" tabindex="-1"></a><span class="co"># add the boxplot geom</span></span>
-<span id="cb214-5"><a href="examining-data-ii.html#cb214-5" tabindex="-1"></a>p.boxplot <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="examining-data-ii.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="co"># note that the `Assault_09_11` column is now y and not x</span></span>
+<span id="cb214-2"><a href="examining-data-ii.html#cb214-2" aria-hidden="true" tabindex="-1"></a><span class="co"># we specify x = &#39;London&#39; to add a meaningfull label to the x-axis</span></span>
+<span id="cb214-3"><a href="examining-data-ii.html#cb214-3" aria-hidden="true" tabindex="-1"></a>p.boxplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(London.Ambulance, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&#39;London&#39;</span>, <span class="at">y=</span>Assault_09_11))</span>
+<span id="cb214-4"><a href="examining-data-ii.html#cb214-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add the boxplot geom</span></span>
+<span id="cb214-5"><a href="examining-data-ii.html#cb214-5" aria-hidden="true" tabindex="-1"></a>p.boxplot <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-boxplot-1.png" width="672" /></p>
 <p>If we are just interested in Camden then we can use the <code>camden</code> object created above in the code.</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="examining-data-ii.html#cb215-1" tabindex="-1"></a><span class="co"># boxplot for camden only</span></span>
-<span id="cb215-2"><a href="examining-data-ii.html#cb215-2" tabindex="-1"></a><span class="co"># we speficy x = &#39;Camden&#39; to add a meaningfull label to the x-axis</span></span>
-<span id="cb215-3"><a href="examining-data-ii.html#cb215-3" tabindex="-1"></a>p.boxplot.camden <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(camden, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&#39;Camden&#39;</span>, <span class="at">y=</span>Assault_09_11))</span>
-<span id="cb215-4"><a href="examining-data-ii.html#cb215-4" tabindex="-1"></a><span class="co"># add the boxplot geom</span></span>
-<span id="cb215-5"><a href="examining-data-ii.html#cb215-5" tabindex="-1"></a>p.boxplot.camden <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="examining-data-ii.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot for camden only</span></span>
+<span id="cb215-2"><a href="examining-data-ii.html#cb215-2" aria-hidden="true" tabindex="-1"></a><span class="co"># we speficy x = &#39;Camden&#39; to add a meaningfull label to the x-axis</span></span>
+<span id="cb215-3"><a href="examining-data-ii.html#cb215-3" aria-hidden="true" tabindex="-1"></a>p.boxplot.camden <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(camden, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&#39;Camden&#39;</span>, <span class="at">y=</span>Assault_09_11))</span>
+<span id="cb215-4"><a href="examining-data-ii.html#cb215-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add the boxplot geom</span></span>
+<span id="cb215-5"><a href="examining-data-ii.html#cb215-5" aria-hidden="true" tabindex="-1"></a>p.boxplot.camden <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-boxplot-camden-1.png" width="672" /></p>
 <p>If you prefer you can flip the plot 90 degrees so that it reads from left to right:</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="examining-data-ii.html#cb216-1" tabindex="-1"></a><span class="co"># add the boxplot geom and rotate</span></span>
-<span id="cb216-2"><a href="examining-data-ii.html#cb216-2" tabindex="-1"></a>p.boxplot.camden <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb216-3"><a href="examining-data-ii.html#cb216-3" tabindex="-1"></a>                   <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="examining-data-ii.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add the boxplot geom and rotate</span></span>
+<span id="cb216-2"><a href="examining-data-ii.html#cb216-2" aria-hidden="true" tabindex="-1"></a>p.boxplot.camden <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb216-3"><a href="examining-data-ii.html#cb216-3" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">coord_flip</span>()</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/boxplot-camden-rotate-1.png" width="672" /></p>
 <p>You can see that Camden looks a little different to the boxplot of the entire dataset. It would therefore be useful to compare the distributions of data within each of the Boroughs in a single plot as we did with the histograms above. <code>ggplot2</code> makes this very easy (again!), we just need to change the <code>x</code> parameter to the Borough code column (<em>BorCode</em>).</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="examining-data-ii.html#cb217-1" tabindex="-1"></a><span class="co"># boxplot for camden only</span></span>
-<span id="cb217-2"><a href="examining-data-ii.html#cb217-2" tabindex="-1"></a>p.boxplot.all <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(London.Ambulance, <span class="fu">aes</span>(<span class="at">x=</span>BorCode, <span class="at">y=</span>Assault_09_11))</span>
-<span id="cb217-3"><a href="examining-data-ii.html#cb217-3" tabindex="-1"></a><span class="co"># add the boxplot geom and rotate</span></span>
-<span id="cb217-4"><a href="examining-data-ii.html#cb217-4" tabindex="-1"></a>p.boxplot.all <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb217-5"><a href="examining-data-ii.html#cb217-5" tabindex="-1"></a>     <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="examining-data-ii.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot for camden only</span></span>
+<span id="cb217-2"><a href="examining-data-ii.html#cb217-2" aria-hidden="true" tabindex="-1"></a>p.boxplot.all <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(London.Ambulance, <span class="fu">aes</span>(<span class="at">x=</span>BorCode, <span class="at">y=</span>Assault_09_11))</span>
+<span id="cb217-3"><a href="examining-data-ii.html#cb217-3" aria-hidden="true" tabindex="-1"></a><span class="co"># add the boxplot geom and rotate</span></span>
+<span id="cb217-4"><a href="examining-data-ii.html#cb217-4" aria-hidden="true" tabindex="-1"></a>p.boxplot.all <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb217-5"><a href="examining-data-ii.html#cb217-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">coord_flip</span>()</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/03-boxplot-all-combined-1.png" width="672" /></p>
 </div>
 <div id="recap-3" class="section level4 unnumbered hasAnchor">

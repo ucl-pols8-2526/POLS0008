@@ -4,7 +4,7 @@ site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 link-citations: yes
-github-repo: "UCLPG-MSC-SGDS/POLS0008"
+github-repo: "ucl-pols8-2526/POLS0008"
 description: "POLS0008: Introduction to Quantitative Methods Handbook"
 bibliography: [book.bib, packages.bib]
 ---

@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Week 4 Sourcing data | POLS0008: Introduction to Quantitative Research Methods 2024/25</title>
   <meta name="description" content="POLS0008: Introduction to Quantitative Methods Handbook" />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Week 4 Sourcing data | POLS0008: Introduction to Quantitative Research Methods 2024/25" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="POLS0008: Introduction to Quantitative Methods Handbook" />
-  <meta name="github-repo" content="UCLPG-MSC-SGDS/POLS0008" />
+  <meta name="github-repo" content="ucl-pols8-2526/POLS0008" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Week 4 Sourcing data | POLS0008: Introduction to Quantitative Research Methods 2024/25" />
@@ -338,10 +338,10 @@ Figure 4.2: The <code>Mid-2020: SAPE23DT4</code> file that we downloaded.
 </tbody>
 </table>
 <p>Now, for the moment of truth: let’s try and see if we can load our data into R! Of course, you will first need to upload your <code>csv</code> file to RStudio Server and set your working directory so that R can find the file - but you should be able to do that without any problems by now.</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="sourcing-data.html#cb218-1" tabindex="-1"></a><span class="co"># load csv file from working directory</span></span>
-<span id="cb218-2"><a href="sourcing-data.html#cb218-2" tabindex="-1"></a>midyear <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;midyear2020.csv&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="sourcing-data.html#cb219-1" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb219-2"><a href="sourcing-data.html#cb219-2" tabindex="-1"></a>midyear</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="sourcing-data.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load csv file from working directory</span></span>
+<span id="cb218-2"><a href="sourcing-data.html#cb218-2" aria-hidden="true" tabindex="-1"></a>midyear <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;midyear2020.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="sourcing-data.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb219-2"><a href="sourcing-data.html#cb219-2" aria-hidden="true" tabindex="-1"></a>midyear</span></code></pre></div>
 <div id="questions-10" class="section level4 unnumbered hasAnchor">
 <h4>Questions<a href="sourcing-data.html#questions-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
@@ -402,16 +402,15 @@ Figure 4.2: The <code>Mid-2020: SAPE23DT4</code> file that we downloaded.
 </tbody>
 </table>
 <p>Now we at least have an idea about what our column names mean, we can rename them so that they are a little more intelligible and easier to work with in a later stage.</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="sourcing-data.html#cb220-1" tabindex="-1"></a><span class="co"># rename columns</span></span>
-<span id="cb220-2"><a href="sourcing-data.html#cb220-2" tabindex="-1"></a><span class="fu">names</span>(midyear) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;msoa_code&#39;</span>,<span class="st">&#39;msoa_name&#39;</span>,<span class="st">&#39;lad18_code&#39;</span>,<span class="st">&#39;lad18_name&#39;</span>,<span class="st">&#39;lad20_code&#39;</span>,<span class="st">&#39;lad20_name&#39;</span>,<span class="st">&#39;pop20&#39;</span>)</span>
-<span id="cb220-3"><a href="sourcing-data.html#cb220-3" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb220-4"><a href="sourcing-data.html#cb220-4" tabindex="-1"></a><span class="fu">names</span>(midyear)</span></code></pre></div>
-<pre><code>## [1] &quot;msoa_code&quot;  &quot;msoa_name&quot;  &quot;lad18_code&quot; &quot;lad18_name&quot; &quot;lad20_code&quot;
-## [6] &quot;lad20_name&quot; &quot;pop20&quot;</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="sourcing-data.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename columns</span></span>
+<span id="cb220-2"><a href="sourcing-data.html#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(midyear) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;msoa_code&#39;</span>,<span class="st">&#39;msoa_name&#39;</span>,<span class="st">&#39;lad18_code&#39;</span>,<span class="st">&#39;lad18_name&#39;</span>,<span class="st">&#39;lad20_code&#39;</span>,<span class="st">&#39;lad20_name&#39;</span>,<span class="st">&#39;pop20&#39;</span>)</span>
+<span id="cb220-3"><a href="sourcing-data.html#cb220-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb220-4"><a href="sourcing-data.html#cb220-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(midyear)</span></code></pre></div>
+<pre><code>## [1] &quot;msoa_code&quot;  &quot;msoa_name&quot;  &quot;lad18_code&quot; &quot;lad18_name&quot; &quot;lad20_code&quot; &quot;lad20_name&quot; &quot;pop20&quot;</code></pre>
 <p>The <code>write.csv()</code> is the command we use to save our data.</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="sourcing-data.html#cb222-1" tabindex="-1"></a><span class="co"># write to new csv, specify the object to be export out as a csv &#39;midyear&#39; object</span></span>
-<span id="cb222-2"><a href="sourcing-data.html#cb222-2" tabindex="-1"></a><span class="co"># next make sure to type the new name of the csv file to be named as: i.e., &#39;midyear2020_v2.csv&#39;</span></span>
-<span id="cb222-3"><a href="sourcing-data.html#cb222-3" tabindex="-1"></a><span class="fu">write.csv</span>(midyear, <span class="st">&#39;midyear2020_v2.csv&#39;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="sourcing-data.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="co"># write to new csv, specify the object to be export out as a csv &#39;midyear&#39; object</span></span>
+<span id="cb222-2"><a href="sourcing-data.html#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="co"># next make sure to type the new name of the csv file to be named as: i.e., &#39;midyear2020_v2.csv&#39;</span></span>
+<span id="cb222-3"><a href="sourcing-data.html#cb222-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(midyear, <span class="st">&#39;midyear2020_v2.csv&#39;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <p>Great. This is all looking very good but we are not completely there yet. Now we sourced our data and managed to successfully read the data set into R, we will need to do conduct some final preparations so that our data is analysis ready.</p>
 </div>
 <div id="recap-4" class="section level4 unnumbered hasAnchor">
@@ -434,8 +433,18 @@ Figure 4.2: The <code>Mid-2020: SAPE23DT4</code> file that we downloaded.
 The <code>tidyverse</code> package is in fact a <strong>collection of packages</strong> that are specifically designed for data science tasks. Where in many cases different packages work all slightly differently, all packages of the <code>tidyverse</code> share the underlying design philosophy, grammar, and data structures. The <code>ggplot2</code> package that you worked with last week is actually one of the core package of the <code>tidyverse</code>. This also means that if you load the <code>tidyverse</code> package through <code>library(tidyverse)</code> you directly have access to all the functions that are part of the <code>ggplot2</code> package and you do not have to load the <code>ggplot2</code> package separately. Because the <code>tidyverse</code> consists of multiple packages, it may take a little while before everything is installed so be patient! For more information on <code>tidyverse</code>, have a look at <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>.</p>
 </div>
 <p>If your installation was successful, you can now load the <code>tidyverse</code> as follows:</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="sourcing-data.html#cb223-1" tabindex="-1"></a><span class="co"># load the tidyverse </span></span>
-<span id="cb223-2"><a href="sourcing-data.html#cb223-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="sourcing-data.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the tidyverse </span></span>
+<span id="cb223-2"><a href="sourcing-data.html#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching core tidyverse packages ────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.2     ✔ readr     2.1.4
+## ✔ forcats   1.0.0     ✔ stringr   1.5.0
+## ✔ lubridate 1.9.2     ✔ tibble    3.2.1
+## ✔ purrr     1.0.1     ✔ tidyr     1.3.0
+## ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter()  masks stats::filter()
+## ✖ lubridate::hms() masks vembedr::hms()
+## ✖ dplyr::lag()     masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:04-figure-load-tidyverse"></span>
 <img src="images/general/04_load_tidyverse.png" alt="Loading the tidyverse." width="100%" />
 <p class="caption">
@@ -447,10 +456,10 @@ Figure 4.3: Loading the tidyverse.
 After loading the <code>tidyverse</code>, you may get a short information messages to inform you which packages are attached to your R session and whether there are any conflicting functions. This simply means that there are functions that are named the same across the packages that you have loaded. For instance, when you load the <code>tidyverse</code> in a fresh R session, the <code>tidyverse</code> will tell you that two functions from the <code>dplyr</code> package (which is an integral part of the <code>tidyverse</code> package) <em>mask</em> the functionality of two functions of the <code>stats</code> package (which is part of <code>base</code> R). This simply means that if you now type in <code>filter()</code> you will get the <code>dplyr</code> functionality and not the functionality of the <code>stats</code>. This is very important information as both these functions do something <strong>completely</strong> different! You can still use the <code>filter()</code> function from the <code>stats</code> package but then you have to explicitly tell R that you want to use the function called <code>filter()</code> within the stats package: <code>stats::filter()</code>.</p>
 </div>
 <p>Now that we have loaded the <code>tidyverse</code> we can continue with our data preparation. We will start by reading in the <code>csv</code> file that we created earlier, however, we will use the function <code>read_csv()</code> from the <code>tidyverse</code> instead of the function <code>read.csv()</code> from <code>base</code> R. The function <code>read_csv</code> returns a so-called <code>tibble</code>. <a href="https://r4ds.had.co.nz/tibbles.html">Tibbles</a> are data frames, but they tweak some older behaviours to make life a little easier.</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="sourcing-data.html#cb224-1" tabindex="-1"></a><span class="co"># load csv file from working directory</span></span>
-<span id="cb224-2"><a href="sourcing-data.html#cb224-2" tabindex="-1"></a>midyear <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;midyear2020_v2.csv&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="sourcing-data.html#cb225-1" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb225-2"><a href="sourcing-data.html#cb225-2" tabindex="-1"></a>midyear</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="sourcing-data.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load csv file from working directory</span></span>
+<span id="cb225-2"><a href="sourcing-data.html#cb225-2" aria-hidden="true" tabindex="-1"></a>midyear <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;midyear2020_v2.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="sourcing-data.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb226-2"><a href="sourcing-data.html#cb226-2" aria-hidden="true" tabindex="-1"></a>midyear</span></code></pre></div>
 <pre><code>## # A tibble: 7,201 × 7
 ##    msoa_code msoa_name      lad18_code lad18_name lad20_code lad20_name pop20
 ##    &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt;
@@ -464,15 +473,15 @@ After loading the <code>tidyverse</code>, you may get a short information messag
 ##  8 E02002491 Hartlepool 009 E06000001  Hartlepool E06000001  Hartlepool  6450
 ##  9 E02002492 Hartlepool 010 E06000001  Hartlepool E06000001  Hartlepool  6895
 ## 10 E02002493 Hartlepool 011 E06000001  Hartlepool E06000001  Hartlepool  6722
-## # … with 7,191 more rows</code></pre>
+## # ℹ 7,191 more rows</code></pre>
 <div id="questions-11" class="section level4 unnumbered hasAnchor">
 <h4>Questions<a href="sourcing-data.html#questions-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
 <li>Do you notice a difference between how <code>base</code> R prints a data frame and how a <code>tibble</code> gets printed?</li>
 </ol>
 <p>Let’s have a better look at our data particularly the data types. We can can do this through the <code>str()</code> function:</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="sourcing-data.html#cb227-1" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb227-2"><a href="sourcing-data.html#cb227-2" tabindex="-1"></a><span class="fu">str</span>(midyear)</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="sourcing-data.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb228-2"><a href="sourcing-data.html#cb228-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(midyear)</span></code></pre></div>
 <pre><code>## spc_tbl_ [7,201 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ msoa_code : chr [1:7201] &quot;E02002483&quot; &quot;E02002484&quot; &quot;E02002485&quot; &quot;E02002487&quot; ...
 ##  $ msoa_name : chr [1:7201] &quot;Hartlepool 001&quot; &quot;Hartlepool 002&quot; &quot;Hartlepool 003&quot; &quot;Hartlepool 005&quot; ...
@@ -489,15 +498,15 @@ After loading the <code>tidyverse</code>, you may get a short information messag
 ##   ..   lad18_name = col_character(),
 ##   ..   lad20_code = col_character(),
 ##   ..   lad20_name = col_character(),
-##   ..   pop20 = col_double()
+##   ..   pop20 = col_number()
 ##   .. )
 ##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
 <p>The output of the <code>str()</code> function tells us that every column in our data frame (tibble) is of type “character”, which comes down to a variable that contains textual data. What is interesting, obviously, is that also our <em>pop20</em> variable is considered a character variable. The reason for this is that in the original data white space is used as thousands separator (i.e. <code>11 000</code> instead of <code>11000</code> or <code>11,000</code>). Does it matter? Well, let’s try to calculate the mean and median of our <em>pop20</em> variable:</p>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="sourcing-data.html#cb229-1" tabindex="-1"></a><span class="co"># mean</span></span>
-<span id="cb229-2"><a href="sourcing-data.html#cb229-2" tabindex="-1"></a><span class="fu">mean</span>(midyear<span class="sc">$</span>pop20)</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="sourcing-data.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean</span></span>
+<span id="cb230-2"><a href="sourcing-data.html#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(midyear<span class="sc">$</span>pop20)</span></code></pre></div>
 <pre><code>## [1] 8293.254</code></pre>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="sourcing-data.html#cb231-1" tabindex="-1"></a><span class="co"># median</span></span>
-<span id="cb231-2"><a href="sourcing-data.html#cb231-2" tabindex="-1"></a><span class="fu">median</span>(midyear<span class="sc">$</span>pop20)</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="sourcing-data.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="co"># median</span></span>
+<span id="cb232-2"><a href="sourcing-data.html#cb232-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(midyear<span class="sc">$</span>pop20)</span></code></pre></div>
 <pre><code>## [1] 7974</code></pre>
 <div class="note">
 <p><strong>Note</strong><br/>
@@ -550,11 +559,11 @@ Depending on computer settings and the version of Microsoft Excel or spreadsheet
 Remember that when you encounter a function in a piece of R code that you have not seen before and you are wondering what it does that you can get access the documentation through <code>?name_of_function</code>, e.g. <code>?mutate</code>. For almost any R package, the documentation contains a list of arguments that the function takes, in which format the functions expects these arguments, as well as a set of usage examples.</p>
 </div>
 <p>Let’s have a look at two of the <code>dplyr</code> functions: <code>select()</code> and <code>filter()</code>.</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="sourcing-data.html#cb233-1" tabindex="-1"></a><span class="co"># select columns with the select function</span></span>
-<span id="cb233-2"><a href="sourcing-data.html#cb233-2" tabindex="-1"></a><span class="co"># note that within dplyr we not use quotation marks to refer to columns</span></span>
-<span id="cb233-3"><a href="sourcing-data.html#cb233-3" tabindex="-1"></a>midyear_sel <span class="ot">&lt;-</span> <span class="fu">select</span>(midyear,msoa_code,msoa_name,lad20_code,lad20_name,pop20)</span>
-<span id="cb233-4"><a href="sourcing-data.html#cb233-4" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb233-5"><a href="sourcing-data.html#cb233-5" tabindex="-1"></a>midyear_sel</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="sourcing-data.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select columns with the select function</span></span>
+<span id="cb234-2"><a href="sourcing-data.html#cb234-2" aria-hidden="true" tabindex="-1"></a><span class="co"># note that within dplyr we not use quotation marks to refer to columns</span></span>
+<span id="cb234-3"><a href="sourcing-data.html#cb234-3" aria-hidden="true" tabindex="-1"></a>midyear_sel <span class="ot">&lt;-</span> <span class="fu">select</span>(midyear,msoa_code,msoa_name,lad20_code,lad20_name,pop20)</span>
+<span id="cb234-4"><a href="sourcing-data.html#cb234-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb234-5"><a href="sourcing-data.html#cb234-5" aria-hidden="true" tabindex="-1"></a>midyear_sel</span></code></pre></div>
 <pre><code>## # A tibble: 7,201 × 5
 ##    msoa_code msoa_name      lad20_code lad20_name pop20
 ##    &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt;
@@ -568,12 +577,12 @@ Remember that when you encounter a function in a piece of R code that you have n
 ##  8 E02002491 Hartlepool 009 E06000001  Hartlepool  6450
 ##  9 E02002492 Hartlepool 010 E06000001  Hartlepool  6895
 ## 10 E02002493 Hartlepool 011 E06000001  Hartlepool  6722
-## # … with 7,191 more rows</code></pre>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="sourcing-data.html#cb235-1" tabindex="-1"></a><span class="co"># filter rows with the filter function</span></span>
-<span id="cb235-2"><a href="sourcing-data.html#cb235-2" tabindex="-1"></a><span class="co"># note that within dplyr we not use quotation marks to refer to columns</span></span>
-<span id="cb235-3"><a href="sourcing-data.html#cb235-3" tabindex="-1"></a>midyear_fil <span class="ot">&lt;-</span> <span class="fu">filter</span>(midyear,lad20_name<span class="sc">==</span><span class="st">&#39;Leeds&#39;</span>)</span>
-<span id="cb235-4"><a href="sourcing-data.html#cb235-4" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb235-5"><a href="sourcing-data.html#cb235-5" tabindex="-1"></a>midyear_fil</span></code></pre></div>
+## # ℹ 7,191 more rows</code></pre>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="sourcing-data.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter rows with the filter function</span></span>
+<span id="cb236-2"><a href="sourcing-data.html#cb236-2" aria-hidden="true" tabindex="-1"></a><span class="co"># note that within dplyr we not use quotation marks to refer to columns</span></span>
+<span id="cb236-3"><a href="sourcing-data.html#cb236-3" aria-hidden="true" tabindex="-1"></a>midyear_fil <span class="ot">&lt;-</span> <span class="fu">filter</span>(midyear,lad20_name<span class="sc">==</span><span class="st">&#39;Leeds&#39;</span>)</span>
+<span id="cb236-4"><a href="sourcing-data.html#cb236-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb236-5"><a href="sourcing-data.html#cb236-5" aria-hidden="true" tabindex="-1"></a>midyear_fil</span></code></pre></div>
 <pre><code>## # A tibble: 107 × 7
 ##    msoa_code msoa_name lad18_code lad18_name lad20_code lad20_name pop20
 ##    &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt;
@@ -587,7 +596,7 @@ Remember that when you encounter a function in a piece of R code that you have n
 ##  8 E02002337 Leeds 008 E08000035  Leeds      E08000035  Leeds       7392
 ##  9 E02002338 Leeds 009 E08000035  Leeds      E08000035  Leeds       6769
 ## 10 E02002339 Leeds 010 E08000035  Leeds      E08000035  Leeds       5297
-## # … with 97 more rows</code></pre>
+## # ℹ 97 more rows</code></pre>
 </div>
 <div id="questions-12" class="section level4 unnumbered hasAnchor">
 <h4>Questions<a href="sourcing-data.html#questions-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -596,48 +605,46 @@ Remember that when you encounter a function in a piece of R code that you have n
 <li>How can we get the same data frame with filtered rows (<code>midyear_fil</code>) using the <code>base</code> R syntax we have been using in previous weeks?</li>
 </ol>
 <p>With the <code>mutate()</code> function we can easily create new columns, so let’s try this function to see if we can create a new variable that contains all the data from <em>pop20</em> in a numeric format.</p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="sourcing-data.html#cb237-1" tabindex="-1"></a><span class="co"># create a new variable named pop19_no space</span></span>
-<span id="cb237-2"><a href="sourcing-data.html#cb237-2" tabindex="-1"></a><span class="co"># by replacing all white space with nothing using the &quot;str_replace_all&quot; function</span></span>
-<span id="cb237-3"><a href="sourcing-data.html#cb237-3" tabindex="-1"></a>midyear <span class="ot">&lt;-</span> <span class="fu">mutate</span>(midyear, <span class="at">pop20_nospace=</span><span class="fu">str_replace_all</span>(pop20, <span class="at">pattern=</span><span class="st">&#39; &#39;</span>, <span class="at">repl=</span><span class="st">&#39;&#39;</span>))</span>
-<span id="cb237-4"><a href="sourcing-data.html#cb237-4" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb237-5"><a href="sourcing-data.html#cb237-5" tabindex="-1"></a>midyear</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="sourcing-data.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new variable named pop19_no space</span></span>
+<span id="cb238-2"><a href="sourcing-data.html#cb238-2" aria-hidden="true" tabindex="-1"></a><span class="co"># by replacing all white space with nothing using the &quot;str_replace_all&quot; function</span></span>
+<span id="cb238-3"><a href="sourcing-data.html#cb238-3" aria-hidden="true" tabindex="-1"></a>midyear <span class="ot">&lt;-</span> <span class="fu">mutate</span>(midyear, <span class="at">pop20_nospace=</span><span class="fu">str_replace_all</span>(pop20, <span class="at">pattern=</span><span class="st">&#39; &#39;</span>, <span class="at">repl=</span><span class="st">&#39;&#39;</span>))</span>
+<span id="cb238-4"><a href="sourcing-data.html#cb238-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb238-5"><a href="sourcing-data.html#cb238-5" aria-hidden="true" tabindex="-1"></a>midyear</span></code></pre></div>
 <pre><code>## # A tibble: 7,201 × 8
-##    msoa_code msoa_name      lad18_code lad18_name lad20_…¹ lad20…² pop20 pop20…³
-##    &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;  
-##  1 E02002483 Hartlepool 001 E06000001  Hartlepool E060000… Hartle… 10332 10332  
-##  2 E02002484 Hartlepool 002 E06000001  Hartlepool E060000… Hartle… 10440 10440  
-##  3 E02002485 Hartlepool 003 E06000001  Hartlepool E060000… Hartle…  8165 8165   
-##  4 E02002487 Hartlepool 005 E06000001  Hartlepool E060000… Hartle…  5174 5174   
-##  5 E02002488 Hartlepool 006 E06000001  Hartlepool E060000… Hartle…  5894 5894   
-##  6 E02002489 Hartlepool 007 E06000001  Hartlepool E060000… Hartle…  7638 7638   
-##  7 E02002490 Hartlepool 008 E06000001  Hartlepool E060000… Hartle…  6182 6182   
-##  8 E02002491 Hartlepool 009 E06000001  Hartlepool E060000… Hartle…  6450 6450   
-##  9 E02002492 Hartlepool 010 E06000001  Hartlepool E060000… Hartle…  6895 6895   
-## 10 E02002493 Hartlepool 011 E06000001  Hartlepool E060000… Hartle…  6722 6722   
-## # … with 7,191 more rows, and abbreviated variable names ¹​lad20_code,
-## #   ²​lad20_name, ³​pop20_nospace</code></pre>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="sourcing-data.html#cb239-1" tabindex="-1"></a><span class="co"># create a new variable named pop20_numeric</span></span>
-<span id="cb239-2"><a href="sourcing-data.html#cb239-2" tabindex="-1"></a><span class="co"># by transforming the pop20_nospace variable using the &quot;as.numeric&quot; function</span></span>
-<span id="cb239-3"><a href="sourcing-data.html#cb239-3" tabindex="-1"></a>midyear <span class="ot">&lt;-</span> <span class="fu">mutate</span>(midyear,<span class="at">pop20_numeric=</span><span class="fu">as.numeric</span>(pop20_nospace))</span>
-<span id="cb239-4"><a href="sourcing-data.html#cb239-4" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb239-5"><a href="sourcing-data.html#cb239-5" tabindex="-1"></a>midyear</span></code></pre></div>
+##    msoa_code msoa_name      lad18_code lad18_name lad20_code lad20_name pop20 pop20_nospace
+##    &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;        
+##  1 E02002483 Hartlepool 001 E06000001  Hartlepool E06000001  Hartlepool 10332 10332        
+##  2 E02002484 Hartlepool 002 E06000001  Hartlepool E06000001  Hartlepool 10440 10440        
+##  3 E02002485 Hartlepool 003 E06000001  Hartlepool E06000001  Hartlepool  8165 8165         
+##  4 E02002487 Hartlepool 005 E06000001  Hartlepool E06000001  Hartlepool  5174 5174         
+##  5 E02002488 Hartlepool 006 E06000001  Hartlepool E06000001  Hartlepool  5894 5894         
+##  6 E02002489 Hartlepool 007 E06000001  Hartlepool E06000001  Hartlepool  7638 7638         
+##  7 E02002490 Hartlepool 008 E06000001  Hartlepool E06000001  Hartlepool  6182 6182         
+##  8 E02002491 Hartlepool 009 E06000001  Hartlepool E06000001  Hartlepool  6450 6450         
+##  9 E02002492 Hartlepool 010 E06000001  Hartlepool E06000001  Hartlepool  6895 6895         
+## 10 E02002493 Hartlepool 011 E06000001  Hartlepool E06000001  Hartlepool  6722 6722         
+## # ℹ 7,191 more rows</code></pre>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="sourcing-data.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new variable named pop20_numeric</span></span>
+<span id="cb240-2"><a href="sourcing-data.html#cb240-2" aria-hidden="true" tabindex="-1"></a><span class="co"># by transforming the pop20_nospace variable using the &quot;as.numeric&quot; function</span></span>
+<span id="cb240-3"><a href="sourcing-data.html#cb240-3" aria-hidden="true" tabindex="-1"></a>midyear <span class="ot">&lt;-</span> <span class="fu">mutate</span>(midyear,<span class="at">pop20_numeric=</span><span class="fu">as.numeric</span>(pop20_nospace))</span>
+<span id="cb240-4"><a href="sourcing-data.html#cb240-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb240-5"><a href="sourcing-data.html#cb240-5" aria-hidden="true" tabindex="-1"></a>midyear</span></code></pre></div>
 <pre><code>## # A tibble: 7,201 × 9
-##    msoa_code msoa_name     lad18…¹ lad18…² lad20…³ lad20…⁴ pop20 pop20…⁵ pop20…⁶
-##    &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;
-##  1 E02002483 Hartlepool 0… E06000… Hartle… E06000… Hartle… 10332 10332     10332
-##  2 E02002484 Hartlepool 0… E06000… Hartle… E06000… Hartle… 10440 10440     10440
-##  3 E02002485 Hartlepool 0… E06000… Hartle… E06000… Hartle…  8165 8165       8165
-##  4 E02002487 Hartlepool 0… E06000… Hartle… E06000… Hartle…  5174 5174       5174
-##  5 E02002488 Hartlepool 0… E06000… Hartle… E06000… Hartle…  5894 5894       5894
-##  6 E02002489 Hartlepool 0… E06000… Hartle… E06000… Hartle…  7638 7638       7638
-##  7 E02002490 Hartlepool 0… E06000… Hartle… E06000… Hartle…  6182 6182       6182
-##  8 E02002491 Hartlepool 0… E06000… Hartle… E06000… Hartle…  6450 6450       6450
-##  9 E02002492 Hartlepool 0… E06000… Hartle… E06000… Hartle…  6895 6895       6895
-## 10 E02002493 Hartlepool 0… E06000… Hartle… E06000… Hartle…  6722 6722       6722
-## # … with 7,191 more rows, and abbreviated variable names ¹​lad18_code,
-## #   ²​lad18_name, ³​lad20_code, ⁴​lad20_name, ⁵​pop20_nospace, ⁶​pop20_numeric</code></pre>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="sourcing-data.html#cb241-1" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb241-2"><a href="sourcing-data.html#cb241-2" tabindex="-1"></a><span class="fu">str</span>(midyear)</span></code></pre></div>
+##    msoa_code msoa_name      lad18_code lad18_name lad20_code lad20_name pop20 pop20_nospace pop20_numeric
+##    &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;                 &lt;dbl&gt;
+##  1 E02002483 Hartlepool 001 E06000001  Hartlepool E06000001  Hartlepool 10332 10332                 10332
+##  2 E02002484 Hartlepool 002 E06000001  Hartlepool E06000001  Hartlepool 10440 10440                 10440
+##  3 E02002485 Hartlepool 003 E06000001  Hartlepool E06000001  Hartlepool  8165 8165                   8165
+##  4 E02002487 Hartlepool 005 E06000001  Hartlepool E06000001  Hartlepool  5174 5174                   5174
+##  5 E02002488 Hartlepool 006 E06000001  Hartlepool E06000001  Hartlepool  5894 5894                   5894
+##  6 E02002489 Hartlepool 007 E06000001  Hartlepool E06000001  Hartlepool  7638 7638                   7638
+##  7 E02002490 Hartlepool 008 E06000001  Hartlepool E06000001  Hartlepool  6182 6182                   6182
+##  8 E02002491 Hartlepool 009 E06000001  Hartlepool E06000001  Hartlepool  6450 6450                   6450
+##  9 E02002492 Hartlepool 010 E06000001  Hartlepool E06000001  Hartlepool  6895 6895                   6895
+## 10 E02002493 Hartlepool 011 E06000001  Hartlepool E06000001  Hartlepool  6722 6722                   6722
+## # ℹ 7,191 more rows</code></pre>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="sourcing-data.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb242-2"><a href="sourcing-data.html#cb242-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(midyear)</span></code></pre></div>
 <pre><code>## tibble [7,201 × 9] (S3: tbl_df/tbl/data.frame)
 ##  $ msoa_code    : chr [1:7201] &quot;E02002483&quot; &quot;E02002484&quot; &quot;E02002485&quot; &quot;E02002487&quot; ...
 ##  $ msoa_name    : chr [1:7201] &quot;Hartlepool 001&quot; &quot;Hartlepool 002&quot; &quot;Hartlepool 003&quot; &quot;Hartlepool 005&quot; ...
@@ -649,15 +656,15 @@ Remember that when you encounter a function in a piece of R code that you have n
 ##  $ pop20_nospace: chr [1:7201] &quot;10332&quot; &quot;10440&quot; &quot;8165&quot; &quot;5174&quot; ...
 ##  $ pop20_numeric: num [1:7201] 10332 10440 8165 5174 5894 ...</code></pre>
 <p>Note the information for <em>pop20_numeric</em>: <code>str</code> indicates that the column is now of type <code>num</code> (i.e. numeric). This is much better. We can now try to calculate the median and the mean again:</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="sourcing-data.html#cb243-1" tabindex="-1"></a><span class="co"># calculate the mean of the pop19_numeric variable</span></span>
-<span id="cb243-2"><a href="sourcing-data.html#cb243-2" tabindex="-1"></a><span class="fu">mean</span>(midyear<span class="sc">$</span>pop20_numeric)</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="sourcing-data.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the mean of the pop19_numeric variable</span></span>
+<span id="cb244-2"><a href="sourcing-data.html#cb244-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(midyear<span class="sc">$</span>pop20_numeric)</span></code></pre></div>
 <pre><code>## [1] 8293.254</code></pre>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="sourcing-data.html#cb245-1" tabindex="-1"></a><span class="co"># calculate the median of the pop19_numeric variable</span></span>
-<span id="cb245-2"><a href="sourcing-data.html#cb245-2" tabindex="-1"></a><span class="fu">median</span>(midyear<span class="sc">$</span>pop20_numeric)</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="sourcing-data.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the median of the pop19_numeric variable</span></span>
+<span id="cb246-2"><a href="sourcing-data.html#cb246-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(midyear<span class="sc">$</span>pop20_numeric)</span></code></pre></div>
 <pre><code>## [1] 7974</code></pre>
 <p>Everything seems to be working fine now and our data is now finally ready for analysis, so it is probably wise to save’s save it.</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="sourcing-data.html#cb247-1" tabindex="-1"></a><span class="co"># write to new csv</span></span>
-<span id="cb247-2"><a href="sourcing-data.html#cb247-2" tabindex="-1"></a><span class="fu">write.csv</span>(midyear, <span class="st">&#39;midyear2020_clean.csv&#39;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="sourcing-data.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="co"># write to new csv</span></span>
+<span id="cb248-2"><a href="sourcing-data.html#cb248-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(midyear, <span class="st">&#39;midyear2020_clean.csv&#39;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="recap-5" class="section level4 unnumbered hasAnchor">
 <h4>Recap<a href="sourcing-data.html#recap-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>

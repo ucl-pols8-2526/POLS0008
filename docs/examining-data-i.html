@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Week 2 Examining data I | POLS0008: Introduction to Quantitative Research Methods 2024/25</title>
   <meta name="description" content="POLS0008: Introduction to Quantitative Methods Handbook" />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Week 2 Examining data I | POLS0008: Introduction to Quantitative Research Methods 2024/25" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="POLS0008: Introduction to Quantitative Methods Handbook" />
-  <meta name="github-repo" content="UCLPG-MSC-SGDS/POLS0008" />
+  <meta name="github-repo" content="ucl-pols8-2526/POLS0008" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Week 2 Examining data I | POLS0008: Introduction to Quantitative Research Methods 2024/25" />
@@ -243,8 +243,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Set the directory to the folder location of <code>Week 2</code> to where the CSV file was uploaded by clicking on the <code>More</code> &gt;&gt; <code>Set As Working Directory</code>.</li>
 <li>Finally, import the data into workspace using the <code>read.csv()</code> function.</li>
 </ul>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="examining-data-i.html#cb101-1" tabindex="-1"></a><span class="co"># Load data into RStudio. The spreadsheet is stored in the object called &#39;London.Pop&#39;</span></span>
-<span id="cb101-2"><a href="examining-data-i.html#cb101-2" tabindex="-1"></a>London.Pop <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;London historical population dataset.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="examining-data-i.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data into RStudio. The spreadsheet is stored in the object called &#39;London.Pop&#39;</span></span>
+<span id="cb101-2"><a href="examining-data-i.html#cb101-2" aria-hidden="true" tabindex="-1"></a>London.Pop <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;London historical population dataset.csv&quot;</span>)</span></code></pre></div>
 <p>If you struggle with the above steps, as well as setting up your working directory. Then here is a reminder, <a href="https://uclpg-msc-sgds.github.io/POLS0008/understanding-data.html#importing-data-into-rstudio">have a look at how we did this last week</a>!</p>
 <p>Use the <code>head()</code>, or <code>View()</code> functions to examine the structure of the London population data frame. The <code>head()</code> functions allows the users to see the first 5 rows of the data frame in the R-Console. The View() allows the user to see the entire spreadsheet in a data viewer.</p>
 </div>
@@ -252,14 +252,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.2.2</span> Mean, Median and Mode<a href="examining-data-i.html#mean-median-and-mode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We are going to use the following functions: <code>mean()</code> and <code>median()</code>, to compute the <strong>mean</strong> and <strong>median</strong> value respectively - these two estimates are one of the three <strong>measures of central tendency</strong>.</p>
 <p>We can apply these measures on our <code>London.Pop</code> data set. Let’s do this by focusing on London’s population in 2011. We going to keep the 1st, 2nd and 24th columns in the <code>London.Pop</code> data frame which corresponds to the columns called <code>Area Code</code>, <code>Area Name</code> and <code>Person-2011</code>, respectively.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="examining-data-i.html#cb102-1" tabindex="-1"></a><span class="co"># select the relevant columns</span></span>
-<span id="cb102-2"><a href="examining-data-i.html#cb102-2" tabindex="-1"></a>London.Pop2011 <span class="ot">&lt;-</span> London.Pop[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">24</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="examining-data-i.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select the relevant columns</span></span>
+<span id="cb102-2"><a href="examining-data-i.html#cb102-2" aria-hidden="true" tabindex="-1"></a>London.Pop2011 <span class="ot">&lt;-</span> London.Pop[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">24</span>)]</span></code></pre></div>
 <p>Now we can calculate our <strong>measures of central tendency</strong> using R’s built-in functions for the median and the mean.</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="examining-data-i.html#cb103-1" tabindex="-1"></a><span class="co"># calculate the median of the 2011 population variable</span></span>
-<span id="cb103-2"><a href="examining-data-i.html#cb103-2" tabindex="-1"></a><span class="fu">median</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="examining-data-i.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the median of the 2011 population variable</span></span>
+<span id="cb103-2"><a href="examining-data-i.html#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span></code></pre></div>
 <pre><code>## [1] 254096</code></pre>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="examining-data-i.html#cb105-1" tabindex="-1"></a><span class="co"># calculate the mean of the 2011 population variable</span></span>
-<span id="cb105-2"><a href="examining-data-i.html#cb105-2" tabindex="-1"></a><span class="fu">mean</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="examining-data-i.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the mean of the 2011 population variable</span></span>
+<span id="cb105-2"><a href="examining-data-i.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span></code></pre></div>
 <pre><code>## [1] 247695.2</code></pre>
 <div id="questions" class="section level4 unnumbered hasAnchor">
 <h4>Question(s)<a href="examining-data-i.html#questions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -271,17 +271,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Note</strong><br/>
 You do not have to worry about creating your own functions, so just copy and paste the code below to create the <code>get_mode()</code> function.</p>
 </div>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="examining-data-i.html#cb107-1" tabindex="-1"></a><span class="co"># create a function to calculate the mode</span></span>
-<span id="cb107-2"><a href="examining-data-i.html#cb107-2" tabindex="-1"></a>get_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb107-3"><a href="examining-data-i.html#cb107-3" tabindex="-1"></a>  </span>
-<span id="cb107-4"><a href="examining-data-i.html#cb107-4" tabindex="-1"></a>  <span class="co"># get unique values of the input vector</span></span>
-<span id="cb107-5"><a href="examining-data-i.html#cb107-5" tabindex="-1"></a>  uniqv <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
-<span id="cb107-6"><a href="examining-data-i.html#cb107-6" tabindex="-1"></a>  </span>
-<span id="cb107-7"><a href="examining-data-i.html#cb107-7" tabindex="-1"></a>  <span class="co"># select the values with the highest number of occurrences</span></span>
-<span id="cb107-8"><a href="examining-data-i.html#cb107-8" tabindex="-1"></a>  uniqv[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, uniqv)))]</span>
-<span id="cb107-9"><a href="examining-data-i.html#cb107-9" tabindex="-1"></a>}</span>
-<span id="cb107-10"><a href="examining-data-i.html#cb107-10" tabindex="-1"></a><span class="co"># calculate the mode of the 2011 population variable</span></span>
-<span id="cb107-11"><a href="examining-data-i.html#cb107-11" tabindex="-1"></a><span class="fu">get_mode</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="examining-data-i.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a function to calculate the mode</span></span>
+<span id="cb107-2"><a href="examining-data-i.html#cb107-2" aria-hidden="true" tabindex="-1"></a>get_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb107-3"><a href="examining-data-i.html#cb107-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb107-4"><a href="examining-data-i.html#cb107-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get unique values of the input vector</span></span>
+<span id="cb107-5"><a href="examining-data-i.html#cb107-5" aria-hidden="true" tabindex="-1"></a>  uniqv <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
+<span id="cb107-6"><a href="examining-data-i.html#cb107-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb107-7"><a href="examining-data-i.html#cb107-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select the values with the highest number of occurrences</span></span>
+<span id="cb107-8"><a href="examining-data-i.html#cb107-8" aria-hidden="true" tabindex="-1"></a>  uniqv[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, uniqv)))]</span>
+<span id="cb107-9"><a href="examining-data-i.html#cb107-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb107-10"><a href="examining-data-i.html#cb107-10" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the mode of the 2011 population variable</span></span>
+<span id="cb107-11"><a href="examining-data-i.html#cb107-11" aria-hidden="true" tabindex="-1"></a><span class="fu">get_mode</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span></code></pre></div>
 <pre><code>## [1] 7375</code></pre>
 </div>
 <div id="questions-1" class="section level4 unnumbered hasAnchor">
@@ -291,50 +291,48 @@ You do not have to worry about creating your own functions, so just copy and pas
 <li>Even though we went through all the trouble to create our own function to calculate the mode, do you think it is a good choice to calculate the mode for this variable? Why? Why not?</li>
 </ol>
 <p>Although R does most of the hard work for us, especially with the <code>mean()</code> and the <code>median()</code> function, it is a good idea to once go through the calculations of these two central tendency measures ourselves. Let’s calculate the mean step-by-step and then verify our results with the results of R’s <code>mean()</code> function.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="examining-data-i.html#cb109-1" tabindex="-1"></a><span class="co"># get the sum of all values</span></span>
-<span id="cb109-2"><a href="examining-data-i.html#cb109-2" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span>
-<span id="cb109-3"><a href="examining-data-i.html#cb109-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb109-4"><a href="examining-data-i.html#cb109-4" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Sum</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="examining-data-i.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the sum of all values</span></span>
+<span id="cb109-2"><a href="examining-data-i.html#cb109-2" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span>
+<span id="cb109-3"><a href="examining-data-i.html#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb109-4"><a href="examining-data-i.html#cb109-4" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Sum</span></code></pre></div>
 <pre><code>## [1] 8173941</code></pre>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="examining-data-i.html#cb111-1" tabindex="-1"></a><span class="co"># get the total number of observations</span></span>
-<span id="cb111-2"><a href="examining-data-i.html#cb111-2" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Obs <span class="ot">&lt;-</span> <span class="fu">length</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span>
-<span id="cb111-3"><a href="examining-data-i.html#cb111-3" tabindex="-1"></a><span class="co"># inspect the result </span></span>
-<span id="cb111-4"><a href="examining-data-i.html#cb111-4" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Obs</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="examining-data-i.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the total number of observations</span></span>
+<span id="cb111-2"><a href="examining-data-i.html#cb111-2" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Obs <span class="ot">&lt;-</span> <span class="fu">length</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span>
+<span id="cb111-3"><a href="examining-data-i.html#cb111-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result </span></span>
+<span id="cb111-4"><a href="examining-data-i.html#cb111-4" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Obs</span></code></pre></div>
 <pre><code>## [1] 33</code></pre>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="examining-data-i.html#cb113-1" tabindex="-1"></a><span class="co"># calculate the mean</span></span>
-<span id="cb113-2"><a href="examining-data-i.html#cb113-2" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Mean <span class="ot">&lt;-</span> Persons.<span class="fl">2011.</span>Sum <span class="sc">/</span> Persons.<span class="fl">2011.</span>Obs</span>
-<span id="cb113-3"><a href="examining-data-i.html#cb113-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb113-4"><a href="examining-data-i.html#cb113-4" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Mean</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="examining-data-i.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the mean</span></span>
+<span id="cb113-2"><a href="examining-data-i.html#cb113-2" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Mean <span class="ot">&lt;-</span> Persons.<span class="fl">2011.</span>Sum <span class="sc">/</span> Persons.<span class="fl">2011.</span>Obs</span>
+<span id="cb113-3"><a href="examining-data-i.html#cb113-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb113-4"><a href="examining-data-i.html#cb113-4" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Mean</span></code></pre></div>
 <pre><code>## [1] 247695.2</code></pre>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="examining-data-i.html#cb115-1" tabindex="-1"></a><span class="co"># compare our result with R&#39;s built-in function</span></span>
-<span id="cb115-2"><a href="examining-data-i.html#cb115-2" tabindex="-1"></a><span class="fu">mean</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>) <span class="sc">==</span> Persons.<span class="fl">2011.</span>Mean</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="examining-data-i.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compare our result with R&#39;s built-in function</span></span>
+<span id="cb115-2"><a href="examining-data-i.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>) <span class="sc">==</span> Persons.<span class="fl">2011.</span>Mean</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Great. Our own calculation of the mean is identical to R’s built-in function. Now let’s do the same for the median.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="examining-data-i.html#cb117-1" tabindex="-1"></a><span class="co"># get the total number of observations</span></span>
-<span id="cb117-2"><a href="examining-data-i.html#cb117-2" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Obs <span class="ot">&lt;-</span> <span class="fu">length</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span>
-<span id="cb117-3"><a href="examining-data-i.html#cb117-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb117-4"><a href="examining-data-i.html#cb117-4" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Obs</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="examining-data-i.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the total number of observations</span></span>
+<span id="cb117-2"><a href="examining-data-i.html#cb117-2" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Obs <span class="ot">&lt;-</span> <span class="fu">length</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>)</span>
+<span id="cb117-3"><a href="examining-data-i.html#cb117-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb117-4"><a href="examining-data-i.html#cb117-4" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Obs</span></code></pre></div>
 <pre><code>## [1] 33</code></pre>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="examining-data-i.html#cb119-1" tabindex="-1"></a><span class="co"># order our data from lowest to highest</span></span>
-<span id="cb119-2"><a href="examining-data-i.html#cb119-2" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Ordered <span class="ot">&lt;-</span> <span class="fu">sort</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>, <span class="at">decreasing=</span><span class="cn">FALSE</span>)</span>
-<span id="cb119-3"><a href="examining-data-i.html#cb119-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb119-4"><a href="examining-data-i.html#cb119-4" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Ordered</span></code></pre></div>
-<pre><code>##  [1]   7375 158649 160060 182493 185911 186990 190146 199693 206125 219396
-## [11] 220338 231997 237232 239056 246270 253957 254096 254557 254926 258249
-## [21] 273936 275885 278970 288283 303086 306995 307984 309392 311215 312466
-## [31] 338449 356386 363378</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="examining-data-i.html#cb121-1" tabindex="-1"></a><span class="co"># get the number of the observation that contains the median value</span></span>
-<span id="cb121-2"><a href="examining-data-i.html#cb121-2" tabindex="-1"></a>Persons.Median.Obs <span class="ot">&lt;-</span> (Persons.<span class="fl">2011.</span>Obs <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb121-3"><a href="examining-data-i.html#cb121-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb121-4"><a href="examining-data-i.html#cb121-4" tabindex="-1"></a>Persons.Median.Obs</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="examining-data-i.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># order our data from lowest to highest</span></span>
+<span id="cb119-2"><a href="examining-data-i.html#cb119-2" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Ordered <span class="ot">&lt;-</span> <span class="fu">sort</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>, <span class="at">decreasing=</span><span class="cn">FALSE</span>)</span>
+<span id="cb119-3"><a href="examining-data-i.html#cb119-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb119-4"><a href="examining-data-i.html#cb119-4" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Ordered</span></code></pre></div>
+<pre><code>##  [1]   7375 158649 160060 182493 185911 186990 190146 199693 206125 219396 220338 231997 237232 239056 246270 253957 254096 254557 254926 258249
+## [21] 273936 275885 278970 288283 303086 306995 307984 309392 311215 312466 338449 356386 363378</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="examining-data-i.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the number of the observation that contains the median value</span></span>
+<span id="cb121-2"><a href="examining-data-i.html#cb121-2" aria-hidden="true" tabindex="-1"></a>Persons.Median.Obs <span class="ot">&lt;-</span> (Persons.<span class="fl">2011.</span>Obs <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb121-3"><a href="examining-data-i.html#cb121-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb121-4"><a href="examining-data-i.html#cb121-4" aria-hidden="true" tabindex="-1"></a>Persons.Median.Obs</span></code></pre></div>
 <pre><code>## [1] 17</code></pre>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="examining-data-i.html#cb123-1" tabindex="-1"></a><span class="co"># get the median</span></span>
-<span id="cb123-2"><a href="examining-data-i.html#cb123-2" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Median <span class="ot">&lt;-</span> Persons.<span class="fl">2011.</span>Ordered[Persons.Median.Obs]</span>
-<span id="cb123-3"><a href="examining-data-i.html#cb123-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb123-4"><a href="examining-data-i.html#cb123-4" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Median</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="examining-data-i.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the median</span></span>
+<span id="cb123-2"><a href="examining-data-i.html#cb123-2" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Median <span class="ot">&lt;-</span> Persons.<span class="fl">2011.</span>Ordered[Persons.Median.Obs]</span>
+<span id="cb123-3"><a href="examining-data-i.html#cb123-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb123-4"><a href="examining-data-i.html#cb123-4" aria-hidden="true" tabindex="-1"></a>Persons.<span class="fl">2011.</span>Median</span></code></pre></div>
 <pre><code>## [1] 254096</code></pre>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="examining-data-i.html#cb125-1" tabindex="-1"></a><span class="co"># compare our result with R&#39;s built-in function</span></span>
-<span id="cb125-2"><a href="examining-data-i.html#cb125-2" tabindex="-1"></a><span class="fu">median</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>) <span class="sc">==</span> Persons.<span class="fl">2011.</span>Median</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="examining-data-i.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compare our result with R&#39;s built-in function</span></span>
+<span id="cb125-2"><a href="examining-data-i.html#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(London.Pop2011<span class="sc">$</span>Persons<span class="fl">.2011</span>) <span class="sc">==</span> Persons.<span class="fl">2011.</span>Median</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 </div>
@@ -346,8 +344,8 @@ You do not have to worry about creating your own functions, so just copy and pas
 <p><strong>Note</strong><br/>
 Next week we will be diving deeper into data visualisation and making plots and graphs in R, but for now it is a good idea to already take a sneak peek at how to create some basic plots.</p>
 </div>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="examining-data-i.html#cb127-1" tabindex="-1"></a><span class="co"># make a quick plot of two variables of the London population data set</span></span>
-<span id="cb127-2"><a href="examining-data-i.html#cb127-2" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>,London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="examining-data-i.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make a quick plot of two variables of the London population data set</span></span>
+<span id="cb127-2"><a href="examining-data-i.html#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>,London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 <div id="experimenting-with-plot" class="section level4 unnumbered hasAnchor">
 <h4>Experimenting with <code>plot()</code><a href="examining-data-i.html#experimenting-with-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -356,21 +354,21 @@ Next week we will be diving deeper into data visualisation and making plots and 
 <li>Instead of using the <code>$</code> to select the columns of our data set, how else can we get the same results?</li>
 </ol>
 <p>The result of calling the <code>plot()</code> function, is a very simple <a href="https://en.wikipedia.org/wiki/Scatter_plot">scatter graph</a>. The <code>plot()</code> function offers a huge number of options for customisation. You can see them using the <code>?plot</code> help pages and also the <code>?par</code> help pages (<code>par</code> in this case is short for parameters). There are some examples below (note how the parameters come after specifying the <code>x</code> and <code>y</code> columns).</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="examining-data-i.html#cb128-1" tabindex="-1"></a><span class="co"># add a title, change point colour, change point size</span></span>
-<span id="cb128-2"><a href="examining-data-i.html#cb128-2" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>, London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>, <span class="at">main=</span><span class="st">&#39;Quick Plot in R&#39;</span>, <span class="at">col=</span><span class="st">&#39;blue&#39;</span>, <span class="at">cex=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="examining-data-i.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a title, change point colour, change point size</span></span>
+<span id="cb128-2"><a href="examining-data-i.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>, London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>, <span class="at">main=</span><span class="st">&#39;Quick Plot in R&#39;</span>, <span class="at">col=</span><span class="st">&#39;blue&#39;</span>, <span class="at">cex=</span><span class="dv">2</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="examining-data-i.html#cb129-1" tabindex="-1"></a><span class="co"># add a title, change point colour, change point symbol</span></span>
-<span id="cb129-2"><a href="examining-data-i.html#cb129-2" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>, London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>, <span class="at">main=</span><span class="st">&quot;Another Quick Plot in R&quot;</span>, <span class="at">col=</span><span class="st">&#39;magenta&#39;</span>, <span class="at">pch=</span><span class="dv">22</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="examining-data-i.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a title, change point colour, change point symbol</span></span>
+<span id="cb129-2"><a href="examining-data-i.html#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>, London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>, <span class="at">main=</span><span class="st">&quot;Another Quick Plot in R&quot;</span>, <span class="at">col=</span><span class="st">&#39;magenta&#39;</span>, <span class="at">pch=</span><span class="dv">22</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p>Also, you can apply titles to the axes using the <code>xlab =""</code> and <code>ylab=""</code> argument after the <code>main=""</code> in the <code>plot()</code>.</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="examining-data-i.html#cb130-1" tabindex="-1"></a><span class="co"># add a axis titles, rotate number labels</span></span>
-<span id="cb130-2"><a href="examining-data-i.html#cb130-2" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>, London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>, <span class="at">main=</span><span class="st">&quot;Another Quick Plot in R&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Population in 1811&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Population in 1911&quot;</span>, <span class="at">col=</span><span class="st">&#39;magenta&#39;</span>, <span class="at">pch=</span><span class="dv">22</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="examining-data-i.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a axis titles, rotate number labels</span></span>
+<span id="cb130-2"><a href="examining-data-i.html#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>, London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>, <span class="at">main=</span><span class="st">&quot;Another Quick Plot in R&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Population in 1811&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Population in 1911&quot;</span>, <span class="at">col=</span><span class="st">&#39;magenta&#39;</span>, <span class="at">pch=</span><span class="dv">22</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <p>You can prevent R from printing the scientific notation (e.g., <code>2e+05</code>, <code>4e+05</code> etc.,) on the y-axis in the graphical output. You can turn it off by typing the following code before running the <code>plot()</code> function</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="examining-data-i.html#cb131-1" tabindex="-1"></a><span class="co"># turn-off horrible scientific notation</span></span>
-<span id="cb131-2"><a href="examining-data-i.html#cb131-2" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
-<span id="cb131-3"><a href="examining-data-i.html#cb131-3" tabindex="-1"></a><span class="co"># add a axis titles, rotate number labels</span></span>
-<span id="cb131-4"><a href="examining-data-i.html#cb131-4" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>, London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>, <span class="at">main=</span><span class="st">&quot;Another Quick Plot in R&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Population in 1811&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Population in 1911&quot;</span>, <span class="at">col=</span><span class="st">&#39;magenta&#39;</span>, <span class="at">pch=</span><span class="dv">22</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="examining-data-i.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># turn-off horrible scientific notation</span></span>
+<span id="cb131-2"><a href="examining-data-i.html#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb131-3"><a href="examining-data-i.html#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="co"># add a axis titles, rotate number labels</span></span>
+<span id="cb131-4"><a href="examining-data-i.html#cb131-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(London.Pop<span class="sc">$</span>Persons<span class="fl">.1811</span>, London.Pop<span class="sc">$</span>Persons<span class="fl">.1911</span>, <span class="at">main=</span><span class="st">&quot;Another Quick Plot in R&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Population in 1811&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Population in 1911&quot;</span>, <span class="at">col=</span><span class="st">&#39;magenta&#39;</span>, <span class="at">pch=</span><span class="dv">22</span>)</span></code></pre></div>
 <div class="note">
 <p><strong>Note</strong><br/>
 For more information on the plot parameters (some have obscure names) have a look here: <a href="http://www.statmethods.net/advgraphs/parameters.html" class="uri">http://www.statmethods.net/advgraphs/parameters.html</a></p>
@@ -389,10 +387,10 @@ For more information on the plot parameters (some have obscure names) have a loo
 <h2><span class="header-section-number">2.4</span> Measures of dispersion<a href="examining-data-i.html#measures-of-dispersion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When exploring your data, <strong>measures of central tendency</strong> alone are not enough as they only tell you what a ‘typical’ value looks like but they do not tell you anything about all other values. Therefore we also need to look at some <strong>measures of dispersion</strong>. Measures of dispersion describe the spread of data around a central value (e.g. the mean, the median, or the mode). The most commonly used measure of dispersion is the <a href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a>. The standard deviation is a measure to summarise the spread of your data around the mean. The short video below will introduce you to the standard deviation as well as to three other measures of dispersion: the <strong>range</strong>, the <strong>interquartile range</strong>, and the <strong>variance</strong>.</p>
 <p>For the rest of this tutorial we will change our data set to one containing the number of assault incidents that ambulances have been called to in London between 2009 and 2011. You will need to download a prepared version of this file called: <code>Ambulance and Assault Incidents data.csv</code> and upload it to your working directory. It is in the same data format (<code>csv</code>) as our London population file so we use the <code>read.csv()</code> command again.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="examining-data-i.html#cb132-1" tabindex="-1"></a><span class="co"># Load data into RStudio. The spreadsheet is stored in the object called &#39;London.Ambulance&#39;</span></span>
-<span id="cb132-2"><a href="examining-data-i.html#cb132-2" tabindex="-1"></a>London.Ambulance <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;Ambulance and Assault Incidents data.csv&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="examining-data-i.html#cb133-1" tabindex="-1"></a><span class="co"># inspect the results </span></span>
-<span id="cb133-2"><a href="examining-data-i.html#cb133-2" tabindex="-1"></a><span class="fu">head</span>(London.Ambulance)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="examining-data-i.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data into RStudio. The spreadsheet is stored in the object called &#39;London.Ambulance&#39;</span></span>
+<span id="cb132-2"><a href="examining-data-i.html#cb132-2" aria-hidden="true" tabindex="-1"></a>London.Ambulance <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;Ambulance and Assault Incidents data.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="examining-data-i.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the results </span></span>
+<span id="cb133-2"><a href="examining-data-i.html#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(London.Ambulance)</span></code></pre></div>
 <pre><code>##   BorCode     WardName WardCode                WardType Assault_09_11
 ## 1    00AA   Aldersgate   00AAFA Prospering Metropolitan            10
 ## 2    00AA      Aldgate   00AAFB Prospering Metropolitan             0
@@ -400,8 +398,8 @@ For more information on the plot parameters (some have obscure names) have a loo
 ## 4    00AA Billingsgate   00AAFD Prospering Metropolitan             0
 ## 5    00AA  Bishopsgate   00AAFE Prospering Metropolitan           188
 ## 6    00AA Bread Street   00AAFF Prospering Metropolitan             0</code></pre>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="examining-data-i.html#cb135-1" tabindex="-1"></a><span class="co"># inspect the number of rows and columns of the data set</span></span>
-<span id="cb135-2"><a href="examining-data-i.html#cb135-2" tabindex="-1"></a><span class="fu">dim</span>(London.Ambulance)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="examining-data-i.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the number of rows and columns of the data set</span></span>
+<span id="cb135-2"><a href="examining-data-i.html#cb135-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(London.Ambulance)</span></code></pre></div>
 <pre><code>## [1] 649   5</code></pre>
 <p>You will notice that the data table has 5 columns and 649 rows. The column headings are abbreviations of the following:</p>
 <table>
@@ -446,11 +444,11 @@ For more information on the plot parameters (some have obscure names) have a loo
 </tbody>
 </table>
 <p>Let’s start by calculating two measures of central tendency by using the <code>median()</code> and <code>mean()</code> functions.</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="examining-data-i.html#cb137-1" tabindex="-1"></a><span class="co"># calculate the median of the assault incident variable</span></span>
-<span id="cb137-2"><a href="examining-data-i.html#cb137-2" tabindex="-1"></a><span class="fu">median</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="examining-data-i.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the median of the assault incident variable</span></span>
+<span id="cb137-2"><a href="examining-data-i.html#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
 <pre><code>## [1] 146</code></pre>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="examining-data-i.html#cb139-1" tabindex="-1"></a><span class="co"># calculate the mean of the assault incident variable</span></span>
-<span id="cb139-2"><a href="examining-data-i.html#cb139-2" tabindex="-1"></a><span class="fu">mean</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="examining-data-i.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the mean of the assault incident variable</span></span>
+<span id="cb139-2"><a href="examining-data-i.html#cb139-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
 <pre><code>## [1] 173.4669</code></pre>
 <div id="questions-2" class="section level4 unnumbered hasAnchor">
 <h4>Questions<a href="examining-data-i.html#questions-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -458,17 +456,17 @@ For more information on the plot parameters (some have obscure names) have a loo
 <li>How do you explain that the mean is larger than the median for this variable?</li>
 </ol>
 <p>Great. Let’s now calculate some measures of dispersion for our data: the range, the interquartile range, and the standard deviation. The calculation of the range is very straightforward as we only need to subtract the the minimum value from the the maximum value. We can find these values by using the built-in <code>min()</code> and <code>max()</code> functions.</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="examining-data-i.html#cb141-1" tabindex="-1"></a><span class="co"># get the minimum value of the assault incident variable</span></span>
-<span id="cb141-2"><a href="examining-data-i.html#cb141-2" tabindex="-1"></a><span class="fu">min</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="examining-data-i.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the minimum value of the assault incident variable</span></span>
+<span id="cb141-2"><a href="examining-data-i.html#cb141-2" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="examining-data-i.html#cb143-1" tabindex="-1"></a><span class="co"># get the maximum value of the assault incident variable</span></span>
-<span id="cb143-2"><a href="examining-data-i.html#cb143-2" tabindex="-1"></a><span class="fu">max</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="examining-data-i.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the maximum value of the assault incident variable</span></span>
+<span id="cb143-2"><a href="examining-data-i.html#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
 <pre><code>## [1] 1582</code></pre>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="examining-data-i.html#cb145-1" tabindex="-1"></a><span class="co"># calculate the range</span></span>
-<span id="cb145-2"><a href="examining-data-i.html#cb145-2" tabindex="-1"></a><span class="dv">1582</span> <span class="sc">-</span> <span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="examining-data-i.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the range</span></span>
+<span id="cb145-2"><a href="examining-data-i.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1582</span> <span class="sc">-</span> <span class="dv">0</span></span></code></pre></div>
 <pre><code>## [1] 1582</code></pre>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="examining-data-i.html#cb147-1" tabindex="-1"></a><span class="co"># or in one go</span></span>
-<span id="cb147-2"><a href="examining-data-i.html#cb147-2" tabindex="-1"></a><span class="fu">max</span>(London.Ambulance<span class="sc">$</span>Assault_09_11) <span class="sc">-</span> <span class="fu">min</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="examining-data-i.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co"># or in one go</span></span>
+<span id="cb147-2"><a href="examining-data-i.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(London.Ambulance<span class="sc">$</span>Assault_09_11) <span class="sc">-</span> <span class="fu">min</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
 <pre><code>## [1] 1582</code></pre>
 </div>
 <div id="questions-3" class="section level4 unnumbered hasAnchor">
@@ -481,81 +479,60 @@ For more information on the plot parameters (some have obscure names) have a loo
 <p><strong>Note</strong><br/>
 A percentile is a score at or below which a given percentage of your data points fall. For example, the 50th percentile (also known as the median!) is the score at or below which 50% of the scores in the distribution may be found.</p>
 </div>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="examining-data-i.html#cb149-1" tabindex="-1"></a><span class="co"># get the total number of observations</span></span>
-<span id="cb149-2"><a href="examining-data-i.html#cb149-2" tabindex="-1"></a>London.Ambulance.Obs <span class="ot">&lt;-</span> <span class="fu">length</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span>
-<span id="cb149-3"><a href="examining-data-i.html#cb149-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb149-4"><a href="examining-data-i.html#cb149-4" tabindex="-1"></a>London.Ambulance.Obs</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="examining-data-i.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the total number of observations</span></span>
+<span id="cb149-2"><a href="examining-data-i.html#cb149-2" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Obs <span class="ot">&lt;-</span> <span class="fu">length</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span>
+<span id="cb149-3"><a href="examining-data-i.html#cb149-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb149-4"><a href="examining-data-i.html#cb149-4" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Obs</span></code></pre></div>
 <pre><code>## [1] 649</code></pre>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="examining-data-i.html#cb151-1" tabindex="-1"></a><span class="co"># order our data from lowest to highest</span></span>
-<span id="cb151-2"><a href="examining-data-i.html#cb151-2" tabindex="-1"></a>London.Ambulance.Ordered <span class="ot">&lt;-</span> <span class="fu">sort</span>(London.Ambulance<span class="sc">$</span>Assault_09_11, <span class="at">decreasing=</span><span class="cn">FALSE</span>)</span>
-<span id="cb151-3"><a href="examining-data-i.html#cb151-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb151-4"><a href="examining-data-i.html#cb151-4" tabindex="-1"></a>London.Ambulance.Ordered</span></code></pre></div>
-<pre><code>##   [1]    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
-##  [16]    0   10   18   19   21   22   25   28   28   28   29   30   34   36   36
-##  [31]   38   40   41   41   42   42   42   43   43   44   44   45   46   46   47
-##  [46]   47   48   48   48   49   49   49   49   49   50   50   50   51   51   51
-##  [61]   51   51   51   52   53   53   54   54   54   55   55   55   56   56   56
-##  [76]   56   57   57   57   57   57   58   59   59   60   61   62   63   63   64
-##  [91]   64   64   64   64   64   64   65   65   65   66   66   66   67   67   67
-## [106]   68   69   69   69   69   70   70   71   71   71   71   72   73   74   74
-## [121]   74   74   75   75   75   76   76   76   76   76   76   76   77   77   77
-## [136]   77   77   77   78   78   78   79   79   79   80   80   80   80   81   81
-## [151]   82   82   82   83   83   84   85   85   85   86   86   86   86   87   87
-## [166]   87   87   87   88   88   88   89   89   89   89   89   91   91   93   93
-## [181]   94   94   96   97   97   97   98   98   98   99   99  100  100  101  102
-## [196]  102  102  102  102  103  104  105  105  105  105  105  106  107  107  107
-## [211]  108  108  108  108  109  109  109  109  110  110  110  110  111  111  112
-## [226]  112  113  113  113  113  114  114  114  114  114  114  115  115  116  116
-## [241]  117  117  117  117  118  118  119  119  119  119  119  120  120  120  121
-## [256]  121  122  122  122  123  124  124  125  125  125  125  125  125  126  127
-## [271]  127  127  127  128  128  128  129  129  130  130  130  131  131  131  132
-## [286]  132  132  132  132  133  133  134  135  135  135  137  137  138  138  138
-## [301]  138  138  139  139  140  141  142  142  142  142  143  143  143  143  144
-## [316]  144  144  144  145  145  145  146  146  146  146  146  146  148  148  148
-## [331]  149  150  150  150  151  151  152  152  152  153  153  153  153  154  155
-## [346]  155  155  156  156  157  157  157  157  158  158  158  158  160  161  161
-## [361]  161  161  162  162  163  163  164  164  165  165  166  167  169  169  170
-## [376]  170  170  171  171  172  172  175  175  175  176  178  178  180  181  181
-## [391]  181  182  182  182  183  183  184  184  184  185  185  185  186  188  190
-## [406]  190  190  191  192  192  193  193  193  194  194  194  194  194  194  195
-## [421]  195  195  195  196  196  196  197  198  198  199  200  200  201  201  201
-## [436]  202  203  204  205  206  206  208  208  208  208  208  209  209  209  210
-## [451]  210  210  210  212  212  212  213  213  213  213  214  215  215  216  217
-## [466]  220  220  221  221  222  222  222  224  225  226  226  227  229  229  230
-## [481]  230  231  232  232  232  232  233  233  234  234  235  235  236  237  237
-## [496]  238  238  240  243  243  244  245  245  245  247  247  247  248  249  251
-## [511]  251  251  251  252  252  253  253  253  254  255  257  257  258  258  258
-## [526]  258  259  259  259  260  260  260  261  264  265  265  266  267  267  268
-## [541]  270  271  272  272  273  273  274  274  274  278  278  278  279  281  283
-## [556]  283  283  284  285  287  288  290  291  292  292  293  293  294  295  296
-## [571]  296  297  300  300  302  303  304  305  306  306  313  314  315  315  315
-## [586]  315  318  319  321  324  325  326  326  328  329  331  334  334  339  339
-## [601]  339  341  342  347  350  352  352  355  358  359  361  363  365  365  366
-## [616]  369  371  371  374  376  378  383  405  407  409  420  429  429  435  437
-## [631]  437  442  457  458  464  467  473  482  484  495  502  535  542  573  579
-## [646]  602  765 1305 1582</code></pre>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="examining-data-i.html#cb153-1" tabindex="-1"></a><span class="co"># get the number (&#39;index value&#39;) of the observation that contains the 25th percentile</span></span>
-<span id="cb153-2"><a href="examining-data-i.html#cb153-2" tabindex="-1"></a>London.Ambulance.Q1 <span class="ot">&lt;-</span> (London.Ambulance.Obs <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">/</span><span class="dv">4</span></span>
-<span id="cb153-3"><a href="examining-data-i.html#cb153-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb153-4"><a href="examining-data-i.html#cb153-4" tabindex="-1"></a>London.Ambulance.Q1</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="examining-data-i.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="co"># order our data from lowest to highest</span></span>
+<span id="cb151-2"><a href="examining-data-i.html#cb151-2" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Ordered <span class="ot">&lt;-</span> <span class="fu">sort</span>(London.Ambulance<span class="sc">$</span>Assault_09_11, <span class="at">decreasing=</span><span class="cn">FALSE</span>)</span>
+<span id="cb151-3"><a href="examining-data-i.html#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb151-4"><a href="examining-data-i.html#cb151-4" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Ordered</span></code></pre></div>
+<pre><code>##   [1]    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0   10   18   19   21   22   25   28   28   28   29   30   34   36
+##  [30]   36   38   40   41   41   42   42   42   43   43   44   44   45   46   46   47   47   48   48   48   49   49   49   49   49   50   50   50   51
+##  [59]   51   51   51   51   51   52   53   53   54   54   54   55   55   55   56   56   56   56   57   57   57   57   57   58   59   59   60   61   62
+##  [88]   63   63   64   64   64   64   64   64   64   65   65   65   66   66   66   67   67   67   68   69   69   69   69   70   70   71   71   71   71
+## [117]   72   73   74   74   74   74   75   75   75   76   76   76   76   76   76   76   77   77   77   77   77   77   78   78   78   79   79   79   80
+## [146]   80   80   80   81   81   82   82   82   83   83   84   85   85   85   86   86   86   86   87   87   87   87   87   88   88   88   89   89   89
+## [175]   89   89   91   91   93   93   94   94   96   97   97   97   98   98   98   99   99  100  100  101  102  102  102  102  102  103  104  105  105
+## [204]  105  105  105  106  107  107  107  108  108  108  108  109  109  109  109  110  110  110  110  111  111  112  112  113  113  113  113  114  114
+## [233]  114  114  114  114  115  115  116  116  117  117  117  117  118  118  119  119  119  119  119  120  120  120  121  121  122  122  122  123  124
+## [262]  124  125  125  125  125  125  125  126  127  127  127  127  128  128  128  129  129  130  130  130  131  131  131  132  132  132  132  132  133
+## [291]  133  134  135  135  135  137  137  138  138  138  138  138  139  139  140  141  142  142  142  142  143  143  143  143  144  144  144  144  145
+## [320]  145  145  146  146  146  146  146  146  148  148  148  149  150  150  150  151  151  152  152  152  153  153  153  153  154  155  155  155  156
+## [349]  156  157  157  157  157  158  158  158  158  160  161  161  161  161  162  162  163  163  164  164  165  165  166  167  169  169  170  170  170
+## [378]  171  171  172  172  175  175  175  176  178  178  180  181  181  181  182  182  182  183  183  184  184  184  185  185  185  186  188  190  190
+## [407]  190  191  192  192  193  193  193  194  194  194  194  194  194  195  195  195  195  196  196  196  197  198  198  199  200  200  201  201  201
+## [436]  202  203  204  205  206  206  208  208  208  208  208  209  209  209  210  210  210  210  212  212  212  213  213  213  213  214  215  215  216
+## [465]  217  220  220  221  221  222  222  222  224  225  226  226  227  229  229  230  230  231  232  232  232  232  233  233  234  234  235  235  236
+## [494]  237  237  238  238  240  243  243  244  245  245  245  247  247  247  248  249  251  251  251  251  252  252  253  253  253  254  255  257  257
+## [523]  258  258  258  258  259  259  259  260  260  260  261  264  265  265  266  267  267  268  270  271  272  272  273  273  274  274  274  278  278
+## [552]  278  279  281  283  283  283  284  285  287  288  290  291  292  292  293  293  294  295  296  296  297  300  300  302  303  304  305  306  306
+## [581]  313  314  315  315  315  315  318  319  321  324  325  326  326  328  329  331  334  334  339  339  339  341  342  347  350  352  352  355  358
+## [610]  359  361  363  365  365  366  369  371  371  374  376  378  383  405  407  409  420  429  429  435  437  437  442  457  458  464  467  473  482
+## [639]  484  495  502  535  542  573  579  602  765 1305 1582</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="examining-data-i.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the number (&#39;index value&#39;) of the observation that contains the 25th percentile</span></span>
+<span id="cb153-2"><a href="examining-data-i.html#cb153-2" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Q1 <span class="ot">&lt;-</span> (London.Ambulance.Obs <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">/</span><span class="dv">4</span></span>
+<span id="cb153-3"><a href="examining-data-i.html#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb153-4"><a href="examining-data-i.html#cb153-4" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Q1</span></code></pre></div>
 <pre><code>## [1] 162.5</code></pre>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="examining-data-i.html#cb155-1" tabindex="-1"></a><span class="co"># get the number (&#39;index value&#39;) of the observation that contains the 75th percentile</span></span>
-<span id="cb155-2"><a href="examining-data-i.html#cb155-2" tabindex="-1"></a>London.Ambulance.Q3 <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>(London.Ambulance.Obs <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">/</span><span class="dv">4</span></span>
-<span id="cb155-3"><a href="examining-data-i.html#cb155-3" tabindex="-1"></a><span class="co"># inspect the result</span></span>
-<span id="cb155-4"><a href="examining-data-i.html#cb155-4" tabindex="-1"></a>London.Ambulance.Q3</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="examining-data-i.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the number (&#39;index value&#39;) of the observation that contains the 75th percentile</span></span>
+<span id="cb155-2"><a href="examining-data-i.html#cb155-2" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Q3 <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>(London.Ambulance.Obs <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">/</span><span class="dv">4</span></span>
+<span id="cb155-3"><a href="examining-data-i.html#cb155-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the result</span></span>
+<span id="cb155-4"><a href="examining-data-i.html#cb155-4" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Q3</span></code></pre></div>
 <pre><code>## [1] 487.5</code></pre>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="examining-data-i.html#cb157-1" tabindex="-1"></a><span class="co"># get the 25th percentile</span></span>
-<span id="cb157-2"><a href="examining-data-i.html#cb157-2" tabindex="-1"></a>London.Ambulance.Ordered[<span class="dv">163</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="examining-data-i.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the 25th percentile</span></span>
+<span id="cb157-2"><a href="examining-data-i.html#cb157-2" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Ordered[<span class="dv">163</span>]</span></code></pre></div>
 <pre><code>## [1] 86</code></pre>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="examining-data-i.html#cb159-1" tabindex="-1"></a><span class="co"># get the 75the percentile</span></span>
-<span id="cb159-2"><a href="examining-data-i.html#cb159-2" tabindex="-1"></a>London.Ambulance.Ordered[<span class="dv">488</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="examining-data-i.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the 75the percentile</span></span>
+<span id="cb159-2"><a href="examining-data-i.html#cb159-2" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Ordered[<span class="dv">488</span>]</span></code></pre></div>
 <pre><code>## [1] 233</code></pre>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="examining-data-i.html#cb161-1" tabindex="-1"></a><span class="co"># get the interquartile range</span></span>
-<span id="cb161-2"><a href="examining-data-i.html#cb161-2" tabindex="-1"></a><span class="dv">233</span> <span class="sc">-</span> <span class="dv">86</span></span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="examining-data-i.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the interquartile range</span></span>
+<span id="cb161-2"><a href="examining-data-i.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="dv">233</span> <span class="sc">-</span> <span class="dv">86</span></span></code></pre></div>
 <pre><code>## [1] 147</code></pre>
 <p>As explained at the very end of this <a href="https://web.microsoftstream.com/video/5d95c429-4c0d-451f-8359-2cb9729eb837"><strong>lecture video</strong></a>, we can also visually represent our range, median, and interquartile range using a box and whisker plot:</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="examining-data-i.html#cb163-1" tabindex="-1"></a><span class="co"># make a quick boxplot of our assault incident variable</span></span>
-<span id="cb163-2"><a href="examining-data-i.html#cb163-2" tabindex="-1"></a><span class="fu">boxplot</span>(London.Ambulance<span class="sc">$</span>Assault_09_11, <span class="at">horizontal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="examining-data-i.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make a quick boxplot of our assault incident variable</span></span>
+<span id="cb163-2"><a href="examining-data-i.html#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(London.Ambulance<span class="sc">$</span>Assault_09_11, <span class="at">horizontal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="POLS0008_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 </div>
 <div id="questions-4" class="section level4 unnumbered hasAnchor">
@@ -573,30 +550,30 @@ A percentile is a score at or below which a given percentage of your data points
 <li>Divide by <span class="math inline">\(n-1\)</span>.</li>
 <li>Take the square root of the final number.</li>
 </ol>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="examining-data-i.html#cb164-1" tabindex="-1"></a><span class="co"># calculate the mean</span></span>
-<span id="cb164-2"><a href="examining-data-i.html#cb164-2" tabindex="-1"></a>London.Ambulance.Mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span>
-<span id="cb164-3"><a href="examining-data-i.html#cb164-3" tabindex="-1"></a><span class="co"># subtract the mean from each observation</span></span>
-<span id="cb164-4"><a href="examining-data-i.html#cb164-4" tabindex="-1"></a>London.Ambulance.Res <span class="ot">&lt;-</span> London.Ambulance<span class="sc">$</span>Assault_09_11 <span class="sc">-</span> London.Ambulance.Mean</span>
-<span id="cb164-5"><a href="examining-data-i.html#cb164-5" tabindex="-1"></a><span class="co"># square each residual</span></span>
-<span id="cb164-6"><a href="examining-data-i.html#cb164-6" tabindex="-1"></a>London.Ambulance.Res.Sq <span class="ot">&lt;-</span> London.Ambulance.Res<span class="sc">**</span><span class="dv">2</span></span>
-<span id="cb164-7"><a href="examining-data-i.html#cb164-7" tabindex="-1"></a><span class="co"># sum all squared residuals</span></span>
-<span id="cb164-8"><a href="examining-data-i.html#cb164-8" tabindex="-1"></a>London.Ambulance.Res.Sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(London.Ambulance.Res.Sq)</span>
-<span id="cb164-9"><a href="examining-data-i.html#cb164-9" tabindex="-1"></a><span class="co"># divide the sum of all sqaured residuals by n - 1</span></span>
-<span id="cb164-10"><a href="examining-data-i.html#cb164-10" tabindex="-1"></a>London.Ambulance.Variance <span class="ot">&lt;-</span> London.Ambulance.Res.Sum <span class="sc">/</span> (<span class="fu">length</span>(London.Ambulance<span class="sc">$</span>Assault_09_11) <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb164-11"><a href="examining-data-i.html#cb164-11" tabindex="-1"></a><span class="co"># take the square root of the final number</span></span>
-<span id="cb164-12"><a href="examining-data-i.html#cb164-12" tabindex="-1"></a>London.Ambulance.Sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(London.Ambulance.Variance)</span>
-<span id="cb164-13"><a href="examining-data-i.html#cb164-13" tabindex="-1"></a><span class="co"># standard deviation</span></span>
-<span id="cb164-14"><a href="examining-data-i.html#cb164-14" tabindex="-1"></a>London.Ambulance.Sd</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="examining-data-i.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the mean</span></span>
+<span id="cb164-2"><a href="examining-data-i.html#cb164-2" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span>
+<span id="cb164-3"><a href="examining-data-i.html#cb164-3" aria-hidden="true" tabindex="-1"></a><span class="co"># subtract the mean from each observation</span></span>
+<span id="cb164-4"><a href="examining-data-i.html#cb164-4" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Res <span class="ot">&lt;-</span> London.Ambulance<span class="sc">$</span>Assault_09_11 <span class="sc">-</span> London.Ambulance.Mean</span>
+<span id="cb164-5"><a href="examining-data-i.html#cb164-5" aria-hidden="true" tabindex="-1"></a><span class="co"># square each residual</span></span>
+<span id="cb164-6"><a href="examining-data-i.html#cb164-6" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Res.Sq <span class="ot">&lt;-</span> London.Ambulance.Res<span class="sc">**</span><span class="dv">2</span></span>
+<span id="cb164-7"><a href="examining-data-i.html#cb164-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sum all squared residuals</span></span>
+<span id="cb164-8"><a href="examining-data-i.html#cb164-8" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Res.Sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(London.Ambulance.Res.Sq)</span>
+<span id="cb164-9"><a href="examining-data-i.html#cb164-9" aria-hidden="true" tabindex="-1"></a><span class="co"># divide the sum of all sqaured residuals by n - 1</span></span>
+<span id="cb164-10"><a href="examining-data-i.html#cb164-10" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Variance <span class="ot">&lt;-</span> London.Ambulance.Res.Sum <span class="sc">/</span> (<span class="fu">length</span>(London.Ambulance<span class="sc">$</span>Assault_09_11) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb164-11"><a href="examining-data-i.html#cb164-11" aria-hidden="true" tabindex="-1"></a><span class="co"># take the square root of the final number</span></span>
+<span id="cb164-12"><a href="examining-data-i.html#cb164-12" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(London.Ambulance.Variance)</span>
+<span id="cb164-13"><a href="examining-data-i.html#cb164-13" aria-hidden="true" tabindex="-1"></a><span class="co"># standard deviation</span></span>
+<span id="cb164-14"><a href="examining-data-i.html#cb164-14" aria-hidden="true" tabindex="-1"></a>London.Ambulance.Sd</span></code></pre></div>
 <pre><code>## [1] 130.3482</code></pre>
 <p>There we go. We got our standard deviation! You probably already saw this coming, but R does have some built-in functions to actually calculate these descriptive statistics for us: <code>range()</code>, <code>IQR()</code>, and <code>sd()</code> will do all the hard work for us!</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="examining-data-i.html#cb166-1" tabindex="-1"></a><span class="co"># range</span></span>
-<span id="cb166-2"><a href="examining-data-i.html#cb166-2" tabindex="-1"></a><span class="fu">range</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="examining-data-i.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="co"># range</span></span>
+<span id="cb166-2"><a href="examining-data-i.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
 <pre><code>## [1]    0 1582</code></pre>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="examining-data-i.html#cb168-1" tabindex="-1"></a><span class="co"># interquartile range</span></span>
-<span id="cb168-2"><a href="examining-data-i.html#cb168-2" tabindex="-1"></a><span class="fu">IQR</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="examining-data-i.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="co"># interquartile range</span></span>
+<span id="cb168-2"><a href="examining-data-i.html#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
 <pre><code>## [1] 147</code></pre>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="examining-data-i.html#cb170-1" tabindex="-1"></a><span class="co"># standard deviation</span></span>
-<span id="cb170-2"><a href="examining-data-i.html#cb170-2" tabindex="-1"></a><span class="fu">sd</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="examining-data-i.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="co"># standard deviation</span></span>
+<span id="cb170-2"><a href="examining-data-i.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
 <pre><code>## [1] 130.3482</code></pre>
 <div class="note">
 <p><strong>Note</strong><br/>
@@ -610,8 +587,8 @@ Please be aware that the <code>IQR()</code> function may give slighlty different
 <li>Given the context of the data, do you think this is a low or a high standard deviation?</li>
 </ol>
 <p>To make things even easier, R also has a <code>summary()</code> function that calculates a number of these routine statistics simultaneously. After running the <code>summary()</code> function on our assault incident variable, you should see you get the minimum (Min.) and maximum (Max.) values of the <em>assault_09_11</em> column; its first (1st Qu.) and third (3rd Qu.) quartiles that comprise the interquartile range; its the mean and the median. The built-in R <code>summary()</code> function does not calculate the standard deviation. There are functions in other libraries that calculate more detailed descriptive statistics,</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="examining-data-i.html#cb172-1" tabindex="-1"></a><span class="co"># calculate the most common descriptive statistics for the assault incident variable</span></span>
-<span id="cb172-2"><a href="examining-data-i.html#cb172-2" tabindex="-1"></a><span class="fu">summary</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="examining-data-i.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the most common descriptive statistics for the assault incident variable</span></span>
+<span id="cb172-2"><a href="examining-data-i.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(London.Ambulance<span class="sc">$</span>Assault_09_11)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##     0.0    86.0   146.0   173.5   233.0  1582.0</code></pre>
 </div>
