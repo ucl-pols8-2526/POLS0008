@@ -613,7 +613,7 @@ Answer for following questions:
 - Create a histogram.
 - Create a cumulative frequency plot.
 - Create a relative cumulative frequency plot.
-- Provide an overall interpretation (see above example and those on slide #46 in Week 1's lecture notes).
+- Provide an overall interpretation (see above example and those in Week 1's lecture notes).
 
 <div class="note">
 **Important Note**: The solution codes for this week will be released by the end of Thursday. 

@@ -177,7 +177,7 @@ In this section you have learnt how to:
 2. Make some simple scatter plots (in preparation for next week) to visualise your data.
 
 ## Measures of dispersion
-When exploring your data, **measures of central tendency** alone are not enough as they only tell you what a 'typical' value looks like but they do not tell you anything about all other values. Therefore we also need to look at some **measures of dispersion**. Measures of dispersion describe the spread of data around a central value (e.g. the mean, the median, or the mode). The most commonly used measure of dispersion is the [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation). The standard deviation is a measure to summarise the spread of your data around the mean. The short video below will introduce you to the standard deviation as well as to three other measures of dispersion: the **range**, the **interquartile range**, and the **variance**.
+When exploring your data, **measures of central tendency** alone are not enough as they only tell you what a 'typical' value looks like but they do not tell you anything about all other values. Therefore we also need to look at some **measures of dispersion**. Measures of dispersion describe the spread of data around a central value (e.g. the mean, the median, or the mode). The most commonly used measure of dispersion is the [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation). The standard deviation is a measure to summarise the spread of your data around the mean. Other measures of dispersion include the **range**, the **interquartile range**, and the **variance**.
 
 For the rest of this tutorial we will change our data set to one containing the number of assault incidents that ambulances have been called to in London between 2009 and 2011. You will need to download a prepared version of this file called: `Ambulance and Assault Incidents data.csv` and upload it to your working directory. It is in the same data format (`csv`) as our London population file so we use the `read.csv()` command again.
 
@@ -266,7 +266,7 @@ London.Ambulance.Ordered[488]
 233 - 86
 ```
 
-As explained at the very end of this [**lecture video**](https://web.microsoftstream.com/video/5d95c429-4c0d-451f-8359-2cb9729eb837), we can also visually represent our range, median, and interquartile range using a box and whisker plot:
+We can also visually represent our range, median, and interquartile range using a box and whisker plot:
 
 ```{r, warnings=FALSE, message=FALSE}
 # make a quick boxplot of our assault incident variable
@@ -277,7 +277,7 @@ boxplot(London.Ambulance$Assault_09_11, horizontal=TRUE)
 1. There is a large difference between the range that we calculated and the interquartile range that we calculated. What does this mean?
 2. The 25th and 75th percentile in the example do not return integer but a fraction (i.e. 162.5 and 487.5). Why do we use 163 and 488 to extract our percentile values and not 162 and 487?
 
-Now, let's move to the standard deviation. Remember: this is one of the most important measures of dispersion and is widely used in all kinds of statistics. The calculation involves the following steps as extensively explained in this [**lecture video**](https://web.microsoftstream.com/video/8f043b29-3e71-4ef7-85f2-6c7a6dd1f090):
+Now, let's move to the standard deviation. Remember: this is one of the most important measures of dispersion and is widely used in all kinds of statistics. The calculation involves the following steps:
 
 1. Calculate the mean.
 2. Subtract the mean from each observation to get a residual.

@@ -48,7 +48,7 @@ knitr::include_graphics('images/general/recommended_books.png')
 
 ## Extra notes {-}
 
-- For other reading materials beyond what's mentioned here please read through the **Module Outline** document [**[HERE]**](https://github.com/UCLPG-MSC-SGDS/POLS0008/raw/main/POLS0008%202022-23%20Module%20Outline%20-%20Updated.pdf) which also is accessible on **Moodle**.
+- For other reading materials beyond what's mentioned here please read through the **Module Outline** document which is accessible on **Moodle**.
 
 - To follow the examples with the dataset provided in the book **"Introductory Statistics with R"**. You will need to install a package called **"ISwR"**. Here is the code chuck for performing such installation.
 
