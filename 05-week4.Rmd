@@ -1,7 +1,7 @@
 # Sourcing data
 
 ## Introduction {#introduction-w04}
-Welcome to your fourth week of **Introduction to Quantitative Research Methods**. This week we will introduce you to sourcing and preparing data from official sources. For the tutorial we will apply what we have learnt over the past weeks onto a new **secondary** data set. OK... one final push to wrap the basic stuff covered today and previous weeks - [**LET'S DO THIS!**](https://www.youtube.com/watch?v=0aMhmo9fHps)
+Welcome to your fourth week of **Introduction to Quantitative Research Methods**. This week we will introduce you to sourcing and preparing data from official sources. For the tutorial we will apply what we have learnt over the past weeks onto a new **secondary** data set. OK... one final push to wrap the basic stuff covered today and previous weeks.
 
 ```{r 04-settings, warnings=FALSE, message=FALSE, echo=FALSE}
 # settings
