@@ -1,19 +1,5 @@
 # Understanding Data
 
-## Lecture video (Length: 02:00:01)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('VhRC697n_iU', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/VhRC697n_iU)
-
-<div class="note">
-**Important Note**: This resource contains the recorded lectures, which are provided for your convenience as a supplementary resource if you have already attended the lectures. Please note that watching the lecture recordings alone will not be sufficient to fully grasp the material or adequately prepare for the final assessment. 
-
-POLS0008 is a practical module that requires consistent weekly engagement in both lectures and seminars. Please be aware that seminars are not recorded. Additionally, while every effort has been made to ensure clarity, module tutors cannot guarantee top-quality audio or video footage.
-</div>
-
 ## Introduction
 
 Welcome to week 1's practicals for Introduction to Quantitative Research Methods. This week we will focus on understanding data. The goal for this week’s session is to get you started with using RStudio and getting you to become familiar with its environment. Today's session aims to introduce you to the basic programming etiquette as well as building your confidence in using RStudio. At the end of this session, you should be able to perform the following:
@@ -24,7 +10,7 @@ Welcome to week 1's practicals for Introduction to Quantitative Research Methods
 4. Handle discrete and categorical data
 5. Basic graphical visualisation in RStudio
 
-Make sure to download the data set for Week 1 from [**HERE**](https://github.com/UCLPG-MSC-SGDS/POLS0008/raw/main/Dataset%20for%20Week%201.zip) if you have not already done so from the **Welcome Page**, as we will use them later on in **Sections 1.7. and 1.9.**. The data sets are:
+Make sure to download the data set for Week 1 from [**HERE**](https://github.com/ucl-pols8-2526/POLS0008/raw/main/Dataset%20for%20Week%201.zip) if you have not already done so from the **Welcome Page**, as we will use them later on in **Sections 1.7. and 1.9.**. The data sets are:
 
 1. For the tutorial practicals (**Section 1.7.**): `Primary Schools in Ealing.csv`
 2. For the seminar tasks and questions (**Section 1.9.**): `All Schools in London.csv`
@@ -588,10 +574,6 @@ lines(classes, rel.cumulative.freq0)
 
 <div class="note">
 **Interpretation**: Out of the 58 primary schools in Ealing, 20 schools (0.3448 or 34.48%) have a student number totals ranging between 401-500 as the most frequent observation. The cumulative frequency of the range bracket for student numbers tells you how many schools have students from that range and lower. For instance 33 primary schools in Ealing have up to 500 students (which is 0.5689 or 56.89% of the data's distribution). 
-</div>
-
-<div class="warning">
-**Thoughts to self**: `cumsum()` function... WTF man!?!
 </div>
 
 **RECAP**

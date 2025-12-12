@@ -20,9 +20,9 @@ embed_youtube('jbkSRLYSojo', height=400) %>% use_align('center')
 ```
 [[Watch on YouTube]](https://www.youtube.com/watch?v=jbkSRLYSojo)
 
-For this tutorial we start by using the `London.Pop` object again that we created during [last week's tutorial](https://uclpg-msc-sgds.github.io/POLS0008/examining-data-i.html). You may still have it loaded into your R workspace if your RStudio Server session is still active.
+For this tutorial we start by using the `London.Pop` object again that we created during [last week's tutorial](https://ucl-pols8-2526.github.io/POLS0008/examining-data-i.html). You may still have it loaded into your R workspace if your RStudio Server session is still active.
 
-At this point, you should be able to set your RStudio Server, upload data to it and set the directory etc., if you struggle with setting up your working directory and you need a reminder, [**then have a look at how we set this up in our first week**](https://uclpg-msc-sgds.github.io/POLS0008/understanding-data.html#understanding-data)!
+At this point, you should be able to set your RStudio Server, upload data to it and set the directory etc., if you struggle with setting up your working directory and you need a reminder, [**then have a look at how we set this up in our first week**](https://ucl-pols8-2526.github.io/POLS0008/understanding-data.html#understanding-data)!
 
 ```{r}
 # Load data into RStudio. The spreadsheet is stored in the object called 'London.Pop'
@@ -218,7 +218,7 @@ ggsave('first_ggplot.pdf', scale=2)
 
 Please note that `ggsave()` only works with plots that were created with `ggplot`. Within the brackets you specify the file name for the plot, but as you can see in the example you also include the file format: in this case `.pdf`, but you could also save the plot as a `.jpg` file. The scale controls how many times bigger you want the exported plot to be than it currently is in the plot window. 
 
-`ggplot2` is not limited to scatterplots and we can also create more advanced plots such as histograms and box and whisker plots. Let's first switch our data set to the one containing the number of assault incidents that ambulances have been called to in London between 2009 and 2011. As you will already have uploaded this `Ambulance and Assault Incidents data.csv` file to your working directory [last week](https://uclpg-msc-sgds.github.io/POLS0008/examining-data-i.html), we can simply reload the file if it is not still loaded into your R workspace.
+`ggplot2` is not limited to scatterplots and we can also create more advanced plots such as histograms and box and whisker plots. Let's first switch our data set to the one containing the number of assault incidents that ambulances have been called to in London between 2009 and 2011. As you will already have uploaded this `Ambulance and Assault Incidents data.csv` file to your working directory [last week](https://ucl-pols8-2526.github.io/POLS0008/examining-data-i.html), we can simply reload the file if it is not still loaded into your R workspace.
 
 ```{r}
 # Load data into RStudio. The spreadsheet is stored in the object called 'London.Ambulance'

@@ -4,8 +4,6 @@
 knitr::include_graphics('images/general/recommended_books.png')
 ```
 
-Contact me via email (a.musah@ucl.ac.uk) if you are having problems securing one or any of these recommended books from the UCL library or elsewhere.
-
 ## Week 1: Understanding Data {-}
 
 1. **Book**: [Theory, Basics] Cetinkaya-Rundel, M., and Hardin, J., 2021, **Introduction to Modern Statistics**, Section I: Introduction to data, Chapter 1: Hello data, Page(s): 12-22. Source: [**openintro.org/book/ims**](https://openintro.org/book/ims).

@@ -8,7 +8,7 @@ Any research project involving [quantitative data](https://en.wikipedia.org/wiki
 
 ### Accessing RStudio Server, uploading and importing data
 
-Make sure to download the data set for Week 2 from [**HERE**](https://github.com/UCLPG-MSC-SGDS/POLS0008/raw/main/Dataset%20for%20Week%202.zip) if you have not already done so from the **Welcome Page**. The data sets are:
+Make sure to download the data set for Week 2 from [**HERE**](https://github.com/ucl-pols8-2526/POLS0008/raw/main/Dataset%20for%20Week%202.zip) if you have not already done so from the **Welcome Page**. The data sets are:
 
 1. For the tutorial practicals: `London historical population dataset.csv`
 2. For the seminar tasks and questions: `Ambulance and Assault Incidents data.csv`
@@ -26,7 +26,7 @@ Let's us first sign into RStudio Server:
 London.Pop <- read.csv("London historical population dataset.csv")
 ```
 
-If you struggle with the above steps, as well as setting up your working directory. Then here is a reminder, [have a look at how we did this last week](https://uclpg-msc-sgds.github.io/POLS0008/understanding-data.html#importing-data-into-rstudio)!
+If you struggle with the above steps, as well as setting up your working directory. Then here is a reminder, [have a look at how we did this last week](https://ucl-pols8-2526.github.io/POLS0008/understanding-data.html#importing-data-into-rstudio)!
 
 Use the `head()`, or `View()` functions to examine the structure of the London population data frame. The `head()` functions allows the users to see the first 5 rows of the data frame in the R-Console. The View() allows the user to see the entire spreadsheet in a data viewer.
 

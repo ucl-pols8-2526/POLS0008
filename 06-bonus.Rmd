@@ -10,7 +10,7 @@ Remember this table in Week 2's lecture (see slide 42 and 44)?
 knitr::include_graphics('images/general/table_slide_42.png', error = FALSE)
 ```
 
-We are going to use the dataset `Health Data.csv`. Download it by clicking this link [**[HERE]**](https://github.com/UCLPG-MSC-SGDS/POLS0008/raw/main/Bonus%20Data.zip)
+We are going to use the dataset `Health Data.csv`. Download it by clicking this link [**[HERE]**](https://github.com/ucl-pols8-2526/POLS0008/raw/main/Bonus%20Data.zip)
 
 We are producing an overall summary of the lung capacity volume (LCV) which is broken down by the following categorical characteristics: **gender**, **age groups** and **altitude type**.
 
