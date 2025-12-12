@@ -353,5 +353,5 @@ Compare the results of the descriptive statistics you have calculated for your *
 - Create a **dual boxplot** to show a visual representation of this comparison. 
 
 <div class="note">
-**Important Note**: The solution codes will be released next week on Monday. Oh yeah - before you leave, do save your R script by pressing the **Save** button in the script window. [You survived - that is it for this week](https://www.youtube.com/watch?v=Wmc8bQoL-J0)!  
+**Important Note**: The solution codes will be released next week on Monday. Before you leave, do save your R script by pressing the **Save** button in the script window. 
 </div>

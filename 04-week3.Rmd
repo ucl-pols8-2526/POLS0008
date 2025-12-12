@@ -399,7 +399,7 @@ Let us start
 - Use `geom_boxplot()`.
 - It should appear vertical
 - Add a title using `ggtitle()`.
-- Apply the customisation to your boxplot accordingly and experiment. [**Take this man's advice!**](https://www.youtube.com/shorts/WntjAM2wqF8)
+- Apply the customisation to your boxplot accordingly and experiment.
 - Save your boxplot as a `.png`.
 
 #### Seminar questions {-}
@@ -418,4 +418,4 @@ Let us start
 </div>
 
 ## Before you leave {#byl-w03}
-Save your R script by pressing the **Save** button in the script window. [That is it for this week](https://www.youtube.com/watch?v=ZbZSe6N_BXs)!
+Save your R script by pressing the **Save** button in the script window. 
