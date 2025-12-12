@@ -49,7 +49,7 @@ You can download the lecture notes and data sets for the practical and seminar l
 
 The **lectures** are held every week in-person on **Tuesday** from **12:00pm to 02:00pm** at the **Roberts Building G06 Sir Ambrose Fleming LT** [**[MAP]**](https://maps.app.goo.gl/4gFXiBwfUHN5MDUX6)
 
-A series of **9 computer seminars** will take place every week on **Thursday** starting from **09:00am, up to 02:00pm**. All students have been allocated to one of 9 seminar groups (i.e., group 1, 2, 3, 4, 5, 6, 7, 8 or 9). To avoid any confusion, please go to your group’s designated. **You will be working together on the tasks and so please bring your laptops**.
+A series of **9 computer seminars** will take place every week on **Thursday** starting from **09:00am, up to 02:00pm**. All students have been allocated to one of 10 seminar groups (i.e., group 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10). To avoid any confusion, please go to your group’s designated. **You will be working together on the tasks and so please bring your laptops**.
 
 The table below highlights precise location for the seminars:
 
@@ -64,6 +64,7 @@ The table below highlights precise location for the seminars:
 |**7** | [Cruciform Building Foyer 1.02 Seminar Room 2](https://www.google.com/maps?q=51.524074,-0.135076), 12:00pm-01:00pm |
 |**8** | [Bernard Street (40) Room 206](https://www.google.com/maps?q=51.52333,-0.12465), 01:00pm-02:00pm |
 |**9** | [Medical Sciences G40](https://www.google.com/maps?q=51.523869,-0.133002), 01:00pm-02:00pm |
+|**10** | [Bernard Street (40) Room 205](https://www.google.com/maps?q=51.52333,-0.12465), 09:00am-10:0am |
 
 **Postgraduate Seminar Facilitators**: Angel Torres Guevara, Giovanni Hollenweger & James Rice
 
